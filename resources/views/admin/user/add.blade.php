@@ -27,31 +27,31 @@
                             @endforeach
                         </div>
                     @endif
-                        <form action="admin/user/add" method="POST">
+                        <form action="{{ url('admin/user/add') }}" method="POST">
                             <div class="form-group">
                                 <label>Level</label>
                                 <select class="form-control" name="quyen">
-                                    <option value="0">Người dùng</option>
-                                    <option value="1">Cộng tác viên</option>
-                                    <option value="2">Quản trị viên</option>
+                                    <option @if(old('quyen')==0) {{ "selected" }} @endif value="0">Người dùng</option>
+                                    <option @if(old('quyen')==1) {{ "selected" }} @endif  value="1">Cộng tác viên</option>
+                                    <option @if(old('quyen')==2) {{ "selected" }} @endif  value="2">Quản trị viên</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Họ tên</label>
-                                <input class="form-control" type="text" name="name" placeholder="Đừng bỏ trống" required />
+                                <input class="form-control" type="text" name="name" placeholder="Đừng bỏ trống" required value="{!! old('name') !!}" />
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="email" name="email" placeholder="kaideptrai@gmail.com" required/>
+                                <input class="form-control" type="email" name="email" placeholder="kaideptrai@gmail.com" value="{!! old('email') !!}" required/>
                             </div>
                             
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="form-control" type="password" name="password" placeholder="*********" required/>
+                                <input class="form-control" type="password" name="password" placeholder="Password" required/>
                             </div>
                             <div class="form-group">
                                 <label>Nhập lại Password</label>
-                                <input class="form-control" type="password" name="passwordAgain" placeholder="Nhập lại mật khẩu" required/>
+                                <input class="form-control" type="password" name="passwordAgain" placeholder="Password Again" required/>
                             </div>
                             
                             <button type="submit" class="btn btn-success">Add User</button>

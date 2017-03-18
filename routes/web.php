@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::group(['prefix' => 'admin'], function() {
+Route::get('admin/login','admin\userController@getLoginAdmin');
+Route::post('admin/login','admin\userController@postLoginAdmin');
+//logout
+Route::get('admin/logout','admin\userController@getLogoutAdmin');
+
+Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
 
 	//index
     Route::get('/','admin\indexController@index');
@@ -125,11 +127,7 @@ Route::group(['prefix' => 'admin'], function() {
         //delete
         Route::get('delete/{id}','admin\adverController@getDelete');
     });
-   	// blog
-   	Route::group(['prefix' => 'blog'], function()
-    {
-        Route::get('list','admin\blogController@list_blog');
-    });
+   	
 
     // footer
     Route::group(['prefix' => 'footer'], function()
@@ -158,7 +156,104 @@ Route::group(['prefix' => 'admin'], function() {
         // xóa
         Route::get('delete/{id}','admin\sub_footerController@getDelete');
     });
+    // blog
+    Route::group(['prefix' => 'blog'], function()
+    {
+        Route::get('list','admin\blogController@listBlog');
 
-    
+        //add
+        Route::get('add','admin\blogController@getAdd');
+        Route::post('add','admin\blogController@postAdd');
+        //edit
+        Route::get('edit/{id}','admin\blogController@getEdit');
+        Route::post('edit/{id}','admin\blogController@postEdit');
+        // delete
+        Route::get('delete/{id}','admin\blogController@getDelete');
+    });
+    //comment
+    Route::group(['prefix' => 'comment-blog'], function()
+    {
+        Route::get('list','admin\commentBlogController@listComBlog');
 
+        //add
+        Route::get('add','admin\commentBlogController@getAdd');
+        Route::post('add','admin\commentBlogController@postAdd');
+        //edit
+        Route::get('edit/{id}','admin\commentBlogController@getEdit');
+        Route::post('edit/{id}','admin\commentBlogController@postEdit');
+        // delete
+        Route::get('delete/{id}','admin\commentBlogController@getDelete');
+    });
+
+    Route::group(['prefix' => 'comment-product'], function()
+    {
+        Route::get('list','admin\commentProductController@listComPro');
+
+        //add
+        Route::get('add','admin\commentProductController@getAdd');
+        Route::post('add','admin\commentProductController@postAdd');
+        //edit
+        Route::get('edit/{id}','admin\commentProductController@getEdit');
+        Route::post('edit/{id}','admin\commentProductController@postEdit');
+        // delete
+        Route::get('delete/{id}','admin\commentProductController@getDelete');
+    });
 });
+
+
+
+
+// FONT-END
+// home
+Route::get('/','PagesController@home');
+Route::get('home','PagesController@home');
+Route::get('index.html','PagesController@home');
+// product
+Route::get('product.html','PagesController@product');
+// product detail
+Route::get('product-detail/{tenkodau}-{id}.html','PagesController@product_detail')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+//category
+Route::get('category/{tenkodau}-{id}.html','PagesController@category')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+//brand
+Route::get('brand/{tenkodau}-{id}.html','PagesController@brand')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+//load ajax
+Route::get('load-img/{Images}','AjaxController@getImages');
+
+
+// login sign-in
+Route::get('login.html','PagesController@getLogin');
+Route::post('login.html','PagesController@postLogin');
+// sign up
+Route::post('signup.html','PagesController@postSignup');
+//edit profile
+Route::get('profile.html','PagesController@getProfile');
+Route::post('profile.html','PagesController@postProfile');
+// logout
+Route::get('logout.html','PagesController@logout');
+
+// blog
+Route::get('blog.html','PagesController@blog');
+// blog detail
+Route::get('blog-detail/{tenkodau}-{id}.html','PagesController@blog_detail')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+Route::get('contact.html', function() {
+    return view('pages.contact');
+});
+
+// comment blog
+Route::post('blog-detail/{tenkodau}-{id}.html','PagesController@commentBlog')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+// comment product
+Route::post('product-detail/{tenkodau}-{id}.html','PagesController@commentProduct')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+
+//buy
+Route::get('buy/{tenkodau}-{id}.html','PagesController@buy')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+// cart
+Route::get('cart.html','PagesController@cart')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+// update cart
+Route::get('update/{id}/{qty}','AjaxController@update');
+// delete product
+Route::get('delete/{id}.html','PagesController@delete')->where('id','[0-9a-zA-Z_-]+');
+// checkout
+Route::get('checkout.html','PagesController@checkout');
+// contact
+Route::get('contact.html','PagesController@getContact');
+Route::post('contact.html','MailController@postContact');

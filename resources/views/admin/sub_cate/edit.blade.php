@@ -29,7 +29,7 @@
                             {{ session('thongbao') }}
                         </div>
                     @endif
-                        <form action="admin/sub-category/edit/{{ $subcate->id }}" method="POST">
+                        <form action="{{ url('admin/sub-category/edit/'.$subcate->id) }}" method="POST">
                             <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name="Category">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Sub Category</label>
-                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="{!! $subcate->ten !!}" />
+                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="@if(old('Ten')) {!! old('Ten') !!} @else {!! $subcate->ten !!} @endif" />
                             </div>
                             <button type="submit" class="btn btn-success">Edit</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

@@ -30,10 +30,10 @@
                             </div>
                         @endif
 
-                        <form action="admin/footer/add" method="POST">
+                        <form action="{{ url('admin/footer/add') }}" method="POST">
                             <div class="form-group">
                                 <label>Footer</label>
-                                <input class="form-control" name="Ten" placeholder="Nhập tên footer category" />
+                                <input class="form-control" name="Ten" placeholder="Nhập tên footer category" value="{{ old('Ten') }}" />
                             </div>
                             <button type="submit" class="btn btn-success">Add</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

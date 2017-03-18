@@ -34,6 +34,7 @@
                                         <th>Username</th>
                                         <th>Email</th>
                                         <th>Chức vụ</th>
+                                        <th>Ngày Đăng ký</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,11 @@
                                             @else {!! "Người dùng" !!}
                                             @endif
 
+                                        </td>
+                                        <td>
+                                            @php
+                                                echo Carbon\Carbon::createFromTimestamp(strtotime($us->created_at))->diffForHumans();
+                                            @endphp
                                         </td>
                                         <td class="text-center" width="10%">
                                             <a href="admin/user/edit/{{ $us->id }}" class="font-20 text-success "><span class="fa fa-pencil-square-o"></span></a>&nbsp;&nbsp;

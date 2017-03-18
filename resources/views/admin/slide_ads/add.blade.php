@@ -36,11 +36,11 @@
                             </div>
                         @endif
 
-                        <form action="admin/slide-ads/add" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/slide-ads/add') }}" method="POST" enctype="multipart/form-data">
                             <table class="table table-striped">
                                 <div class="form-group">
                                     <label>Tên</label>
-                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" />
+                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="{{ old('Ten') }}" />
                                 </div>
                                 <div class="form-group">
                                     <label>Ảnh</label>
@@ -48,11 +48,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Nội Dung</label>
-                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung"></textarea>
+                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">{{ old('NoiDung') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>link</label>
-                                    <input class="form-control" name="link" placeholder="Đừng bỏ trống" />
+                                    <input class="form-control" name="link" placeholder="Đừng bỏ trống" value="{{ old('link') }}" />
                                 </div>
                                 <button type="submit" class="btn btn-success">Add Slide</button>&nbsp;
                                 <button type="reset" class="btn btn-danger">Reset</button>

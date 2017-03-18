@@ -33,6 +33,7 @@
                                         <th class="text-center">Tên Sub Category</th>
                                         <th class="text-center">Tên Không Dấu</th>
                                         <th class="text-center">Thuộc Category</th>
+                                        <th class="text-center">Ngày tạo</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -47,6 +48,11 @@
                                         <td>{{ $sub->ten }}</td>
                                         <td>{{ $sub->tenkodau }}</td>
                                         <td>{{ $sub->category->ten }}</td>
+                                        <td>
+                                            @php
+                                                echo Carbon\Carbon::createFromTimestamp(strtotime($sub->created_at))->diffForHumans();
+                                            @endphp
+                                        </td>
                                         <td class="text-center" width="10%">
                                             <a href="admin/sub-category/edit/{{ $sub->id }}" class="font-20 text-success "><span class="fa fa-pencil-square-o"></span></a>&nbsp;&nbsp;
                                             <a href="admin/sub-category/delete/{{ $sub->id }}" class="font-20 text-danger"><span class="fa fa-times" onclick="return window.confirm('Bạn muốn xóa chứ?')"></span></a>

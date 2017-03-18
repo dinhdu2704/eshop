@@ -31,6 +31,7 @@
                                 <th >Hình Ảnh</th>
                                 <th>Nội Dung</th>
                                 <th>Link</th>
+                                <th>Ngày</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -51,6 +52,9 @@
                                 </td>
                                 <td>{!! $sld->noidung !!}</td>
                                 <td>{!! $sld->link !!}</td>
+                                <td>
+                                    {{ Carbon\Carbon::createFromTimestamp(strtotime($sld->created_at))->diffForHumans()  }}
+                                </td>
                                 <td class="text-center" width="10%">
                                     <a href="admin/slide/edit/{{ $sld->id }}" class="font-20 text-success "><span class="fa fa-pencil-square-o"></span></a>&nbsp;&nbsp;
                                     <a href="admin/slide/delete/{{ $sld->id }}" class="font-20 text-danger"><span class="fa fa-times" onclick="return window.confirm('Bạn muốn xóa chứ?')"></span></a>

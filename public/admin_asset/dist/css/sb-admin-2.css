@@ -442,3 +442,6 @@ table.dataTable thead .sorting:after {
 .delete-color{
   color: #d9534f;
 }
+.center>th{
+  text-align: center;
+}

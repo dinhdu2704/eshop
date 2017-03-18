@@ -36,11 +36,11 @@
                             {!! session('error') !!}
                         </div>
                         @endif
-                        <form action="admin/slide-ads/edit/{!! $slideads->id !!}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/slide-ads/edit/'.$slideads->id) }}" method="POST" enctype="multipart/form-data">
                             <table class="table table-striped">
                                 <div class="form-group">
                                     <label>Tên</label>
-                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="{!! $slideads->ten !!}" />
+                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="@if(old('Ten')) {{ old('Ten') }} @else {!! $slideads->ten !!} @endif" />
                                 </div>
                                 <div class="form-group">
                                     <label>Ảnh</label>
@@ -49,11 +49,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Nội Dung</label>
-                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">{!! $slideads->noidung !!}</textarea>
+                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">@if(old('NoiDung')) {{ old('NoiDung') }} @else {!! $slideads->noidung !!} @endif</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>link</label>
-                                    <input class="form-control" name="link" placeholder="Đừng bỏ trống"  value="{!! $slideads->link !!}" />
+                                    <input class="form-control" name="link" placeholder="Đừng bỏ trống"  value="@if(old('link')) {{ old('link') }} @else {!! $slideads->link !!} @endif" />
                                 </div>
                                 
                                 <button type="submit" class="btn btn-success">Edit Slide</button>&nbsp;

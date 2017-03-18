@@ -30,19 +30,19 @@
                                 {!! session('thongbao') !!}
                             </div>
                         @endif
-                        <form action="admin/sub-footer/add" method="POST">
+                        <form action="{{ url('admin/sub-footer/add') }}" method="POST">
                             <div class="form-group">
                                 <label>Footer</label>
                                 <select class="form-control" name="Footer">
                                 @foreach ($footer as $foo)
-                                    <option value="{!! $foo->id !!}">{!! $foo->ten !!}</option>
+                                    <option @if(old('Footer')==$foo->id) {!! "selected" !!} @endif value="{!! $foo->id !!}">{!! $foo->ten !!}</option>
                                 @endforeach
                                     
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Sub Footer</label>
-                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" />
+                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="{!! old('Ten') !!}" />
                             </div>
 
                             <button type="submit" class="btn btn-success">Add SubFooter</button>

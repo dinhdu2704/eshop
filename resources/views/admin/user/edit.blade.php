@@ -27,7 +27,7 @@
                                 @endforeach
                             </div>
                         @endif
-                        <form action="admin/user/edit/{{ $user->id }}" method="POST">
+                        <form action="{{ url('admin/user/edit/'.$user->id) }}" method="POST">
                             <div class="form-group">
                                 <label>Level</label>
                                 <select name="quyen" class="form-control" >
@@ -50,11 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Họ tên</label>
-                                <input class="form-control" type="text" name="name" placeholder="Đừng bỏ trống" required value="{!! $user->name !!}" />
+                                <input class="form-control" type="text" name="name" placeholder="Đừng bỏ trống" required value="@if(old('name')) {{ old('name') }} @else {!! $user->name !!} @endif" />
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="email" name="email" placeholder="kaideptrai@gmail.com" readonly="" value="{!! $user->email !!}"/>
+                                <input class="form-control" type="email" name="email" placeholder="kaideptrai@gmail.com" readonly="" value="@if(old('email')) {{ old('email') }} @else {!! $user->email !!} @endif"/>
                             </div>
                             <div class="form-group">
                                 <label>

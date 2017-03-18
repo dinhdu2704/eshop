@@ -12,7 +12,7 @@ use App\CommentProduct;
 class productController extends Controller
 {
     public function listProduct(){
-    	$product =Product::paginate(10);
+    	$product =Product::orderBy('id','desc')->paginate(10);
     	return view('admin.product.list',['product'=>$product]);
     }
     public function getAdd(){
@@ -53,25 +53,43 @@ class productController extends Controller
         ]);
 
         //kiểm tra ảnh
-        if($request->hasFile('Image'))
+        if($request->hasFile('Image') && $request->hasFile('Image2') && $request->hasFile('Image3'))
         {   //lấy tên ảnh
             $file=$request->file('Image');
+            $file2=$request->file('Image2');
+            $file3=$request->file('Image3');
             // lấy đuôi file
             $duoi=$file->getClientOriginalExtension();
-            if($duoi!='png' && $duoi!='jpg' && $duoi!='jpeg')
+            $duoi2=$file2->getClientOriginalExtension();
+            $duoi3=$file3->getClientOriginalExtension();
+            if($duoi!='png' && $duoi!='jpg' && $duoi!='jpeg' || $duoi2!='png' && $duoi2!='jpg' && $duoi2!='jpeg' || $duoi3!='png' && $duoi3!='jpg' && $duoi3!='jpeg')
             {
                 return redirect('admin/product/add')->with('error','Ảnh upload không hợp lệ');
             }
             //lấy tên ảnh
             $name=$file->getClientOriginalName();
+            $name2=$file2->getClientOriginalName();
+            $name3=$file3->getClientOriginalName();
             //đặt tên hình mới
             $hinh=str_random(4)."_".$name;
+            $hinh2=str_random(4)."_".$name2;
+            $hinh3=str_random(4)."_".$name3;
             //nếu đã tồn tại tên hình này thì đổi tên
             while(file_exists('upload/product/'.$hinh))
             {
                 $hinh=str_random(4)."_".$name;
             }
+            while(file_exists('upload/product/'.$hinh2))
+            {
+                $hinh2=str_random(4)."_".$name2;
+            }
+            while(file_exists('upload/product/'.$hinh3))
+            {
+                $hinh3=str_random(4)."_".$name3;
+            }
             $file->move('upload/product',$hinh);
+            $file2->move('upload/product',$hinh2);
+            $file3->move('upload/product',$hinh3);
 
             //đưa vào csdl
             $product= new Product();
@@ -86,6 +104,8 @@ class productController extends Controller
             $product->soluong= $request->Quantity;
             $product->noibat= $request->NoiBat;
             $product->hinh= $hinh;
+            $product->hinh2= $hinh2;
+            $product->hinh3= $hinh3;
 
             // save
             $product->save();
@@ -138,35 +158,63 @@ class productController extends Controller
         
 
         //kiểm tra ảnh
-        if($request->hasFile('Image'))
-        {   //lấy tên ảnh
+        if($request->hasFile('Image') && $request->hasFile('Image2') && $request->hasFile('Image3'))
+        {   
+            //lấy tên ảnh
             $file=$request->file('Image');
+            $file2=$request->file('Image2');
+            $file3=$request->file('Image3');
             // lấy đuôi file
             $duoi=$file->getClientOriginalExtension();
-            if($duoi!='png' && $duoi!='jpg' && $duoi!='jpeg')
+            $duoi2=$file2->getClientOriginalExtension();
+            $duoi3=$file3->getClientOriginalExtension();
+            if($duoi!='png' && $duoi!='jpg' && $duoi!='jpeg' || $duoi2!='png' && $duoi2!='jpg' && $duoi2!='jpeg' || $duoi3!='png' && $duoi3!='jpg' && $duoi3!='jpeg')
             {
-                return redirect('admin/product/edit/'.$id)->with('error','Ảnh upload không hợp lệ');
+                return redirect('admin/product/add')->with('error','Ảnh upload không hợp lệ');
             }
             //lấy tên ảnh
             $name=$file->getClientOriginalName();
+            $name2=$file2->getClientOriginalName();
+            $name3=$file3->getClientOriginalName();
             //đặt tên hình mới
             $hinh=str_random(4)."_".$name;
+            $hinh2=str_random(4)."_".$name2;
+            $hinh3=str_random(4)."_".$name3;
             //nếu đã tồn tại tên hình này thì đổi tên
             while(file_exists('upload/product/'.$hinh))
             {
                 $hinh=str_random(4)."_".$name;
             }
+            while(file_exists('upload/product/'.$hinh2))
+            {
+                $hinh2=str_random(4)."_".$name2;
+            }
+            while(file_exists('upload/product/'.$hinh3))
+            {
+                $hinh3=str_random(4)."_".$name3;
+            }
             $file->move('upload/product',$hinh);
+            $file2->move('upload/product',$hinh2);
+            $file3->move('upload/product',$hinh3);
+
             //kiểm tra ảnh cũ
             if($product->hinh!='')
             {
                 if(file_exists('upload/product/'.$product->hinh))
                     unlink('upload/product/'.$product->hinh);
             }
-
+            if($product->hinh2!='')
+            {
+                if(file_exists('upload/product/'.$product->hinh2))
+                    unlink('upload/product/'.$product->hinh2);
+            }
+            if($product->hinh3!='')
+            {
+                if(file_exists('upload/product/'.$product->hinh3))
+                    unlink('upload/product/'.$product->hinh3);
+            }
             //đưa vào csdl
             
-
             $product->idSubCate= $request->Subcate;
             $product->idBrand=$request->Brand;
             $product->ten= $request->Ten;
@@ -177,6 +225,8 @@ class productController extends Controller
             $product->soluong= $request->Quantity;
             $product->noibat= $request->NoiBat;
             $product->hinh= $hinh;
+            $product->hinh2= $hinh2;
+            $product->hinh3= $hinh3;
             // save
             $product->save();
             return redirect('admin/product/edit/'.$id)->with('thongbao','Sửa sản phẩm thành công');
@@ -208,18 +258,44 @@ class productController extends Controller
         $comPro= CommentProduct::where('idPro',$id)->get();
         if(count($comPro)==0)
         {
-            if($product->hinh!='')
+            if($product->hinh!='' || $product->hinh2!='' || $product->hinh3!='')
             {
                 if(file_exists('upload/product/'.$product->hinh))
                 {
                     unlink('upload/product/'.$product->hinh);
                 }
+                if(file_exists('upload/product/'.$product->hinh2))
+                {
+                    unlink('upload/product/'.$product->hinh2);
+                }
+                if(file_exists('upload/product/'.$product->hinh3))
+                {
+                    unlink('upload/product/'.$product->hinh3);
+                }
             }
             $product->delete();
             return redirect('admin/product/list')->with('thongbao','Xóa sản phẩm thành công');
         }
-        else{
-            return redirect('admin/product/list')->with('error','Sản phẩm có chứa forgein key comment chưa thể xóa');
+        else
+        {
+            CommentProduct::where('idPro',$id)->delete();
+            if($product->hinh!='' || $product->hinh2!='' || $product->hinh3!='')
+            {
+                if(file_exists('upload/product/'.$product->hinh))
+                {
+                    unlink('upload/product/'.$product->hinh);
+                }
+                if(file_exists('upload/product/'.$product->hinh2))
+                {
+                    unlink('upload/product/'.$product->hinh2);
+                }
+                if(file_exists('upload/product/'.$product->hinh3))
+                {
+                    unlink('upload/product/'.$product->hinh3);
+                }
+            }
+            $product->delete();
+            return redirect('admin/product/list')->with('error','Xóa sản phẩm thành công');
         }
 
     }

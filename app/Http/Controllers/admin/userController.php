@@ -4,11 +4,11 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
 use App\CommentBlog;
 use App\CommentProduct;
-
 
 class userController extends Controller
 {
@@ -124,5 +124,46 @@ class userController extends Controller
     		return redirect('admin/user/list')->with('error','Phải xóa cmt của User trước');
     	}
 
+    }
+
+    // login
+    public function getLoginAdmin(){
+        return view('admin.layouts.login');
+    }
+    public function postLoginAdmin(Request $request){
+        //check validate
+        $this->validate($request,
+        [
+            'email'=>'required|min:8|max:200',
+            'password'=>'required|min:6|max:64|alpha_dash'
+        ],
+        [
+            'email.required'=>'Bạn chưa nhập Email',
+            'email.min'=>'Email phải trên 8 ký tự',
+            'email.max'=>'Email quá dài',
+            'password.required'=>'Đừng bỏ trống password',
+            'password.min'=>'Password phải trên 6 ký tự',
+            'password.alpha_dash'=>'Password chứa ký tự đặc biệt'
+        ]);
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+        {
+            if(Auth::User()->quyen!=2 && Auth::User()->quyen!=1)
+            {
+                return redirect('admin/login')->with('error','Bạn không đủ quyền truy cập!!');
+            }
+            else{
+                return redirect('admin/index');
+            }
+        }
+        else{
+            return redirect('admin/login')->with('error','Sai Email hoặc Password!!');
+        }
+    }
+
+    // logout
+    public function getLogoutAdmin(){
+        Auth::logout();
+        return redirect('admin/login');
     }
 }

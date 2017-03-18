@@ -29,7 +29,7 @@
                             {{ session('thongbao') }}
                         </div>
                     @endif
-                        <form action="admin/sub-footer/edit/{{ $subfooter->id }}" method="POST">
+                        <form action="{{ url('admin/sub-footer/edit/'.$subfooter->id ) }}" method="POST">
                             <div class="form-group">
                                 <label>Footer</label>
                                 <select class="form-control" name="Footer">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Sub Footer</label>
-                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="{!! $subfooter->ten !!}" />
+                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="@if(old('Ten')) {{ old('Ten') }} @else {!! $subfooter->ten !!} @endif" />
                             </div>
                             <button type="submit" class="btn btn-success">Edit</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

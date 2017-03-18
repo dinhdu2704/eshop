@@ -30,11 +30,10 @@
                         </div>
                     @endif
                     {{-- muốn gửi được dữ liệu đi phải gửi đến route --}}
-                        <form action="admin/category/edit/{{ $category->id }}" method="POST">
-                            
+                        <form action="{{ url('admin/category/edit/'.$category->id) }}" method="POST">
                             <div class="form-group">
                                 <label>Category</label>
-                                <input class="form-control" name="Ten" placeholder="Điền tên thể loại" value="{!! $category->ten !!}"/>
+                                <input class="form-control" name="Ten" placeholder="Điền tên thể loại" value="@if(old('Ten')) {!! old('Ten') !!} @else {!! $category->ten !!} @endif"/>
                             </div>
                             <button type="submit" class="btn btn-success">Edit Category</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

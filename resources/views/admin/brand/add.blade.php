@@ -30,10 +30,10 @@
                             </div>
                         @endif
 
-                        <form action="admin/brand/add" method="POST">
+                        <form action="{{ url('admin/brand/add') }}" method="POST">
                             <div class="form-group">
                                 <label>Brand</label>
-                                <input class="form-control" name="Ten" placeholder="Nhập tên hãng" />
+                                <input class="form-control" name="Ten" placeholder="Nhập tên hãng" value="{!! old('Ten') !!}" />
                             </div>
                             <button type="submit" class="btn btn-success">Add</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

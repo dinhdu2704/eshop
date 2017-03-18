@@ -48,7 +48,7 @@
                                         <td>{{ $bra->tenkodau }}</td>
                                         <td>
                                             @if ($bra->created_at)
-                                                {{ $bra->created_at }}
+                                                {{ Carbon\Carbon::createFromTimestamp(strtotime($bra->created_at))->diffForHumans()  }}
                                             @endif
                                         </td>
                                         <td class="text-center" width="10%">

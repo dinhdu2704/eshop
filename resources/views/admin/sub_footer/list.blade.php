@@ -33,6 +33,7 @@
                                         <th>Tên Sub Category</th>
                                         <th>Tên Không Dấu</th>
                                         <th>Footer Cate</th>
+                                        <th>Ngày</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -47,6 +48,9 @@
                                         <td>{{ $sf->ten }}</td>
                                         <td>{{ $sf->tenkodau }}</td>
                                         <td>{{ $sf->footer->ten }}</td>
+                                        <td>
+                                            {{ Carbon\Carbon::createFromTimestamp(strtotime($sf->created_at))->diffForHumans()  }}
+                                        </td>
                                         <td class="text-center" width="10%">
                                             <a href="admin/sub-footer/edit/{{ $sf->id }}" class="font-20 text-success "><span class="fa fa-pencil-square-o"></span></a>&nbsp;&nbsp;
                                             <a href="admin/sub-footer/delete/{{ $sf->id }}" class="font-20 text-danger" onclick="return window.confirm('Bạn muốn xóa chứ?')"><span class="fa fa-times"></span></a>

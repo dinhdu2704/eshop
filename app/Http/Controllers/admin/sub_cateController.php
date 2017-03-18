@@ -51,7 +51,7 @@ class sub_cateController extends Controller
     	//lưu vào csdl
     	$subcate->save();
     	// chuyển về trang them
-    	return redirect('admin/category/add')->with('thongbao','Add Category Successfully');
+    	return redirect('admin/sub-category/add')->with('thongbao','Add Category Successfully');
     }
     public function getEdit($id){
     	$subcate=SubCategory::find($id);

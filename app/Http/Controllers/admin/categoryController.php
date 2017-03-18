@@ -20,12 +20,13 @@ class categoryController extends Controller
     	// kiểm tra biến truyền đến
     	$this->validate($request,
     		[
-    			'Ten'=>'required|min:3|max:150'
+    			'Ten'=>'required|min:3|max:150|unique:brand,ten'
     		],
     		[
     			'Ten.required'=>'Vui lòng nhập Category mới!',
     			'Ten.min'=>'Category name phải dài hơn 3 ký tự',
-    			'Ten.max'=>'Category phải có độ dài nhỏ hơn 150 ký tự'
+    			'Ten.max'=>'Category phải có độ dài nhỏ hơn 150 ký tự',
+                'Ten.unique'=>'Đã có Category này'
     		]);
     	// khởi tạo đối tượng rỗng để lưu vào csdl
     	$category= new Category();

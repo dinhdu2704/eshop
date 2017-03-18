@@ -62,7 +62,10 @@ class footerController extends Controller
     		return redirect('admin/footer/list')->with('thongbao','Delete Footer Successfully');
     	}
     	else{
-    		return redirect('admin/footer/list')->with('error','Delete Footer Failed, It has SubFooter');
+            SubFooter::where('idFoot',$id)->delete();
+            
+            $footer->delete();
+            return redirect('admin/footer/list')->with('thongbao','Xóa thành công');
     	}
     }
 }

@@ -23,7 +23,10 @@ class Product extends Migration
             $table->string('tenkodau','200');
             $table->string('tomtat');
             $table->text('noidung');
+            $table->string('keyword');
             $table->string('hinh');
+            $table->string('hinh2');
+            $table->string('hinh3');
             $table->integer('gia')->unsigned();
             $table->integer('soluong')->unsigned();
             $table->integer('noibat')->default(0);

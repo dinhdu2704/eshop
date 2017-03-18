@@ -36,14 +36,13 @@
                                 {!! session('thongbao') !!}
                             </div>
                         @endif
-                        <form action="admin/product/edit/{{ $product->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/product/edit/'.$product->id) }}" method="POST" enctype="multipart/form-data">
                             <table class="table table-striped">
                                 <div class="form-group">
                                     <label>Category</label>
                                     <select class="form-control" name="Category" id="Category">
                                     @foreach ($category as $cate)
                                         <option value="{!! $cate->id !!}"
-
                                         @if ($product->subcate->idCate==$cate->id )
                                             {{ "selected" }}
                                         @endif
@@ -52,13 +51,12 @@
                                     @endforeach
                                     </select>
                                 </div>
-
                                 <div class="form-group">
                                     <label>Sub Category</label>
                                     <select class="form-control" name="Subcate" id="Subcate">
                                         @foreach ($subcate as $sub)
                                         <option value="{!! $sub->id !!}"
-
+                                        
                                         @if ($product->idSubCate==$sub->id)
                                             {{ "selected" }}
                                         @endif
@@ -72,7 +70,6 @@
                                     <select class="form-control" name="Brand">
                                         @foreach ($brand as $bra)
                                         <option value="{!! $bra->id !!}"
-                                        
                                         @if ($product->idBrand==$bra->id)
                                             {{ "selected" }}
                                         @endif
@@ -83,25 +80,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Product</label>
-                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="{{ $product->ten }}"/>
+                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="@if(old('Ten')) {!! old('Ten') !!} @else {{ $product->ten }} @endif"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input class="form-control" name="TomTat" placeholder="Đừng bỏ trống" value="{{ $product->tomtat }}"/>
+                                    <input class="form-control" name="TomTat" placeholder="Đừng bỏ trống" value="@if(old('TomTat')){!! old('TomTat') !!} @else {{ $product->tomtat }} @endif"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Content</label>
-                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">{!! $product->noidung !!}</textarea>
+                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">@if(old('NoiDung')){!! old('NoiDung') !!} @else {!! $product->noidung !!} @endif</textarea>
                                 </div>
                                
                                 <div class="form-group">
                                     <label>Price</label>
-                                    <input type="number" min="0" class="form-control" name="Price" placeholder="Đừng bỏ trống" value="{{ $product->gia }}" required/>
+                                    <input type="number"  class="form-control" name="Price" placeholder="Đừng bỏ trống" 
+                                        value="@if(old('Price')){!! old('Price') !!}@else{{ $product->gia }}@endif" required/>
                                 </div>
                                 <div class="form-group">
                                     <label>Quantity</label>
-                                    <input type="number" min="0" class="form-control" name="Quantity" placeholder="Đừng bỏ trống" value="{{ $product->soluong }}" required />
+                                    <input type="number" min="0" class="form-control" name="Quantity" placeholder="Đừng bỏ trống" value="@if(old('Quantity')){!! old('Quantity') !!}@else{{ $product->soluong }}@endif" required />
                                 </div>
                                 <div class="form-group">
                                     <label>Image</label>
@@ -109,6 +107,20 @@
                                         <p><img src="upload/product/{{ $product->hinh }}" style="width:100px"></p>
                                     @endif
                                     <input type="file" name="Image"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Image 2</label>
+                                    @if ($product->hinh2)
+                                        <p><img src="upload/product/{{ $product->hinh2 }}" style="width:100px"></p>
+                                    @endif
+                                    <input type="file" name="Image2"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Image 3</label>
+                                    @if ($product->hinh3)
+                                        <p><img src="upload/product/{{ $product->hinh3 }}" style="width:100px"></p>
+                                    @endif
+                                    <input type="file" name="Image3"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Nổi Bật</label>

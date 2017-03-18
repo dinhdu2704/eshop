@@ -36,13 +36,13 @@
                                 {!! session('thongbao') !!}
                             </div>
                         @endif
-                        <form action="admin/product/add" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/product/add') }}" method="POST" enctype="multipart/form-data">
                             <table class="table table-striped">
                                 <div class="form-group">
                                     <label>Category</label>
                                     <select class="form-control" name="Category" id="Category">
                                     @foreach ($category as $cate)
-                                        <option value="{!! $cate->id !!}">{!! $cate->ten !!}</option>
+                                        <option @if(old('Category')==$cate->id) {{ "selected" }} @endif value="{!! $cate->id !!}">{!! $cate->ten !!}</option>
                                     @endforeach
                                     </select>
                                 </div>
@@ -51,7 +51,7 @@
                                     <label>Sub Category</label>
                                     <select class="form-control" name="Subcate" id="Subcate">
                                         @foreach ($subcate as $sub)
-                                        <option value="{!! $sub->id !!}">{!! $sub->ten !!}</option>
+                                        <option @if(old('Subcate')==$sub->id) {{ "selected" }} @endif value="{!! $sub->id !!}">{!! $sub->ten !!}</option>
                                     @endforeach
                                     </select>
                                 </div>
@@ -59,43 +59,51 @@
                                     <label>Brand</label>
                                     <select class="form-control" name="Brand">
                                         @foreach ($brand as $bra)
-                                        <option value="{!! $bra->id !!}">{!! $bra->ten !!}</option>
+                                        <option @if(old('Brand')==$bra->id) {{ "selected" }} @endif value="{!! $bra->id !!}">{!! $bra->ten !!}</option>
                                     @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Product</label>
-                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" />
+                                    <input class="form-control" name="Ten" placeholder="Đừng bỏ trống" value="{!! old('Ten') !!}" />
                                 </div>
 
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <input class="form-control" name="TomTat" placeholder="Đừng bỏ trống" />
+                                    <input class="form-control" name="TomTat" placeholder="Đừng bỏ trống" value="{!! old('TomTat') !!}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Content</label>
-                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung"></textarea>
+                                    <textarea id="demo" class="form-control ckeditor" rows="3" name="NoiDung">{!! old('NoiDung') !!}</textarea>
                                 </div>
                                
                                 <div class="form-group">
                                     <label>Price</label>
-                                    <input type="number" min="0" class="form-control" name="Price" placeholder="Đừng bỏ trống" required/>
+                                    <input type="number" min="0" class="form-control" name="Price" placeholder="Đừng bỏ trống" required value="{!! old('Price') !!}" />
                                 </div>
                                 <div class="form-group">
                                     <label>Quantity</label>
-                                    <input type="number" min="0" class="form-control" name="Quantity" placeholder="Đừng bỏ trống" required />
+                                    <input type="number" min="0" class="form-control" name="Quantity" placeholder="Đừng bỏ trống" required value="{!! old('Quantity') !!}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Image</label>
                                     <input type="file" name="Image"/>
                                 </div>
                                 <div class="form-group">
+                                    <label>Image 2</label>
+                                    <input type="file" name="Image2"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Image 3</label>
+                                    <input type="file" name="Image3"/>
+                                </div>
+                                <div class="form-group">
                                     <label>Nổi Bật</label>
                                     <label class="radio-inline">
-                                        <input  name="NoiBat" value="1" checked="" type="radio">Có
+                                        <input @if(old('NoiBat')==1) {!! "checked" !!} @endif name="NoiBat" value="1"  type="radio">Có
                                     </label>
                                     <label class="radio-inline">
-                                        <input name="NoiBat" value="0" type="radio">Không
+                                        <input @if(old('NoiBat')==0) {!! "checked" !!} @endif name="NoiBat" value="0" type="radio">Không
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn-success">Add Product</button>&nbsp;

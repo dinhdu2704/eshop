@@ -9,7 +9,9 @@
 </head>
 <body>
 	<div class="container">
+		<h1 class="text-center text-warning">Oh! Sorry. Page not found :(</h1>
 		<img class="center-block img-responsive" src="images/404.png">
+
 	</div>
 	
 </body>

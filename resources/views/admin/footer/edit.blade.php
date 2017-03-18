@@ -30,11 +30,12 @@
                         </div>
                     @endif
                     {{-- muốn gửi được dữ liệu đi phải gửi đến route --}}
-                        <form action="admin/footer/edit/{{ $footer->id }}" method="POST">
+                        <form action="{{ url('admin/footer/edit/'.$footer->id) }}" method="POST">
                             
                             <div class="form-group">
                                 <label>Footer</label>
-                                <input class="form-control" name="Ten" placeholder="Điền tên footer category" value="{!! $footer->ten !!}"/>
+                                <input class="form-control" name="Ten" placeholder="Điền tên footer category" value="@if(old('Ten')) {!! old('Ten') !!}
+                                @else {!! $footer->ten !!} @endif"/>
                             </div>
                             <button type="submit" class="btn btn-success">Edit Footer</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

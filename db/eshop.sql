@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 09, 2017 lúc 05:43 CH
+-- Thời gian đã tạo: Th3 17, 2017 lúc 10:40 SA
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 5.6.30
 
@@ -41,10 +41,8 @@ CREATE TABLE `advertising` (
 --
 
 INSERT INTO `advertising` (`id`, `ten`, `hinh`, `noidung`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'quảng cáo 1', '', 'quảng cáo 1', 'quảng cáo 1', NULL, NULL),
-(2, 'quảng cáo 2', '', 'quảng cáo 2', 'quảng cáo 2', NULL, NULL),
-(3, 'quảng cáo 3', '', 'quảng cáo 3', 'quảng cáo 3', NULL, NULL),
-(4, 'quảng cáo 4', '', 'quảng cáo 4', 'quảng cáo 4', NULL, NULL);
+(4, 'ads', 'vjM0_shipping.jpg', '<p>quảng cáo 4</p>', 'product', NULL, '2017-03-12 04:48:08'),
+(5, 'Slide Product', 'VTtw_advertisement.jpg', '<p>slide-product-e-shop</p>', 'product', '2017-03-13 08:28:20', '2017-03-13 08:28:20');
 
 -- --------------------------------------------------------
 
@@ -71,12 +69,13 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `idUser`, `tieude`, `tieudekodau`, `tomtat`, `noidung`, `hinh`, `noibat`, `soluotxem`, `created_at`, `updated_at`) VALUES
-(11, 2, 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL),
-(12, 2, 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL),
-(13, 3, 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL),
-(14, 2, 'Tiêu đề 2', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL),
-(15, 4, 'Tiêu đề 5', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL),
-(16, 3, 'Tiêu đề 7', 'Tiêu đề 1', 'Tiêu đề 1', 'Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1 Tiêu đề 1', '', 1, 0, NULL, NULL);
+(18, 11, 'Girls Pink T Shirt arrived in store 0', 'girls-pink-t-shirt-arrived-in-store-0', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'gNCR_blog-three.jpg', 1, 0, '2017-03-16 02:38:10', '2017-03-16 08:55:00'),
+(19, 11, 'Girls Pink T Shirt arrived in store 2', 'girls-pink-t-shirt-arrived-in-store-2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'pXNo_blog-two.jpg', 1, 0, '2017-03-16 02:39:06', '2017-03-16 02:39:06'),
+(20, 11, 'Girls Pink T Shirt arrived in store 3', 'girls-pink-t-shirt-arrived-in-store-3', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'vBWB_blog-one.jpg', 1, 0, '2017-03-16 02:41:35', '2017-03-16 02:41:35'),
+(21, 11, 'Girls Pink T Shirt arrived in store 4', 'girls-pink-t-shirt-arrived-in-store-4', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'wmpA_blog-two.jpg', 1, 0, '2017-03-16 02:42:18', '2017-03-16 02:42:18'),
+(22, 11, 'Girls Pink T Shirt arrived in store 5', 'girls-pink-t-shirt-arrived-in-store-5', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'HpH1_blog-three.jpg', 1, 0, '2017-03-16 02:42:35', '2017-03-16 02:42:35'),
+(23, 11, 'Girls Pink T Shirt arrived in store 6', 'girls-pink-t-shirt-arrived-in-store-6', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'm3ZA_blog-one.jpg', 0, 0, '2017-03-16 02:42:53', '2017-03-16 02:42:53'),
+(24, 11, 'Girls Pink T Shirt arrived in store 7', 'girls-pink-t-shirt-arrived-in-store-7', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'eEAz_blog-three.jpg', 0, 0, '2017-03-16 02:43:17', '2017-03-16 02:43:17');
 
 -- --------------------------------------------------------
 
@@ -97,14 +96,13 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`id`, `ten`, `tenkodau`, `created_at`, `updated_at`) VALUES
-(1, 'Brand11', 'brand11', NULL, '2017-03-09 02:42:28'),
-(2, 'Brand2', 'Brand2', NULL, NULL),
-(3, 'Brand3', 'Brand3', NULL, NULL),
-(4, 'Brand4', 'Brand4', NULL, NULL),
-(5, 'Brand5', 'Brand5', NULL, NULL),
-(7, 'Adidas', 'adidas', '2017-03-09 02:38:26', '2017-03-09 02:38:26'),
-(8, 'Footer 5', 'footer-5', '2017-03-09 03:03:24', '2017-03-09 03:03:24'),
-(9, 'Nike', 'nike', '2017-03-09 07:16:43', '2017-03-09 07:16:43');
+(1, 'Nike', 'nike', NULL, '2017-03-12 03:11:33'),
+(2, 'ESPN', 'espn', NULL, '2017-03-12 03:11:49'),
+(3, 'Adidas', 'adidas', NULL, '2017-03-12 03:12:03'),
+(4, 'Underwear', 'underwear', NULL, '2017-03-12 03:12:38'),
+(5, 'Hermes', 'hermes', NULL, '2017-03-12 03:13:42'),
+(7, 'Burberry', 'burberry', '2017-03-09 02:38:26', '2017-03-12 03:14:04'),
+(10, 'Christian Dior', 'christian-dior', '2017-03-12 03:16:44', '2017-03-12 03:16:44');
 
 -- --------------------------------------------------------
 
@@ -125,17 +123,16 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `ten`, `tenkodau`, `created_at`, `updated_at`) VALUES
-(1, 'Category 1', 'category-1', NULL, '2017-03-09 01:48:06'),
-(2, 'Category2', 'Category2', NULL, NULL),
-(3, 'Category3', 'Category3', NULL, NULL),
-(4, 'Category4', 'Category4', NULL, NULL),
-(5, 'Category5', 'Category5', NULL, NULL),
-(6, 'Category6', 'Category6', NULL, NULL),
-(7, 'Category7', 'Category7', NULL, NULL),
-(8, 'Category8', 'Category8', NULL, NULL),
-(12, 'Category 13', 'category-13', '2017-03-09 01:54:26', '2017-03-09 01:54:26'),
-(13, 'Category 14', 'category-14', '2017-03-09 01:54:34', '2017-03-09 01:54:34'),
-(14, 'Giày thể thao', 'giay-the-thao', '2017-03-09 07:16:22', '2017-03-09 07:16:22');
+(1, 'Sportswear', 'sportswear', NULL, '2017-03-12 02:58:47'),
+(2, 'Mens', 'mens', NULL, '2017-03-12 02:58:59'),
+(3, 'Womens', 'womens', NULL, '2017-03-12 02:59:10'),
+(4, 'Kids', 'kids', NULL, '2017-03-12 02:59:20'),
+(5, 'Fashion', 'fashion', NULL, '2017-03-12 02:59:29'),
+(6, 'Households', 'households', NULL, '2017-03-12 02:59:43'),
+(7, 'Interiors', 'interiors', NULL, '2017-03-12 02:59:59'),
+(8, 'Clothing', 'clothing', NULL, '2017-03-12 03:00:09'),
+(12, 'Bags', 'bags', '2017-03-09 01:54:26', '2017-03-12 03:00:38'),
+(13, 'Shoes', 'shoes', '2017-03-09 01:54:34', '2017-03-12 03:00:53');
 
 -- --------------------------------------------------------
 
@@ -159,10 +156,16 @@ CREATE TABLE `comment_blog` (
 --
 
 INSERT INTO `comment_blog` (`id`, `idUser`, `idBlog`, `ten`, `email`, `noidung`, `created_at`, `updated_at`) VALUES
-(1, 2, 12, 'Comment blog id 12', 'Comment blog id 12', 'Comment blog id 12', NULL, NULL),
-(2, 3, 13, 'Comment blog id 13', 'Comment blog id 13', 'Comment blog id 13', NULL, NULL),
-(5, 3, 14, 'Comment blog id 14', 'Comment blog id 14', 'Comment blog id 14', NULL, NULL),
-(8, 4, 12, '424', '424', '242', NULL, NULL);
+(18, 11, 21, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:33', '2017-03-16 10:05:37'),
+(19, 12, 23, '{\"name\":\"kaideptrai1\"}', '{\"email\":\"kai1@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:43', '2017-03-16 05:31:43'),
+(20, 12, 21, '{\"name\":\"kaideptrai1\"}', '{\"email\":\"kai1@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:50', '2017-03-16 05:31:50'),
+(21, 11, 23, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:32:12', '2017-03-16 05:32:12'),
+(22, 11, 23, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:32:31', '2017-03-16 05:32:31'),
+(23, 11, 23, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'bài viết hay quá', '2017-03-16 06:14:24', '2017-03-16 06:14:24'),
+(24, 11, 22, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'ád', '2017-03-16 06:33:30', '2017-03-16 06:33:30'),
+(25, 11, 22, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'a', '2017-03-16 06:35:36', '2017-03-16 06:35:36'),
+(26, 11, 22, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'a', '2017-03-16 06:35:41', '2017-03-16 06:35:41'),
+(27, 11, 24, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'Mình rất thích bài viết này', '2017-03-16 06:37:33', '2017-03-16 06:37:33');
 
 -- --------------------------------------------------------
 
@@ -186,11 +189,11 @@ CREATE TABLE `comment_product` (
 --
 
 INSERT INTO `comment_product` (`id`, `idUser`, `idPro`, `ten`, `email`, `noidung`, `created_at`, `updated_at`) VALUES
-(1, 2, 2, 'comment product id2', 'comment product id2', 'comment product id2', NULL, NULL),
-(2, 10, 4, 'comment product id4', 'comment product id2', 'comment product id2', NULL, NULL),
-(3, 2, 2, 'comment product id2', 'comment product id2', 'comment product id2', NULL, NULL),
-(4, 2, 1, 'comment product id1', 'comment product id1', 'comment product id1', NULL, NULL),
-(5, 5, 3, 'comment product id3', 'comment product id3', 'comment product id3', NULL, NULL);
+(1, 11, 31, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '2017-03-16 10:15:44', '2017-03-16 10:15:44'),
+(2, 11, 31, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '2017-03-16 10:16:08', '2017-03-16 10:16:08'),
+(3, 11, 19, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '2017-03-16 10:16:17', '2017-03-16 10:16:17'),
+(4, 11, 31, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'bài viết này thật sự rất hay', '2017-03-16 10:28:10', '2017-03-16 10:28:10'),
+(5, 11, 26, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'Mình muốn đặt chiếc áo này', '2017-03-16 10:35:40', '2017-03-16 10:35:40');
 
 -- --------------------------------------------------------
 
@@ -211,13 +214,10 @@ CREATE TABLE `foot_category` (
 --
 
 INSERT INTO `foot_category` (`id`, `ten`, `tenkodau`, `created_at`, `updated_at`) VALUES
-(1, 'Footer category1', 'Footer category1', NULL, NULL),
-(2, 'Footer category 2', 'footer-category-2', NULL, '2017-03-09 03:06:19'),
-(3, 'Footer category3', 'Footer category3', NULL, NULL),
-(5, 'Footer category 5', 'footer-category-5', NULL, '2017-03-09 03:05:52'),
-(6, 'Footer 5', 'footer-5', '2017-03-09 03:03:55', '2017-03-09 03:03:55'),
-(7, 'footer 6', 'footer-6', '2017-03-09 03:06:03', '2017-03-09 03:06:03'),
-(8, 'Footer 4', 'footer-4', '2017-03-09 03:51:47', '2017-03-09 03:51:47');
+(9, 'Service', 'service', '2017-03-12 06:37:58', '2017-03-12 06:37:58'),
+(10, 'Quick Shop', 'quick-shop', '2017-03-12 06:38:04', '2017-03-12 06:38:13'),
+(11, 'Policies', 'policies', '2017-03-12 06:38:28', '2017-03-12 06:38:28'),
+(12, 'About Shopper', 'about-shopper', '2017-03-12 06:38:34', '2017-03-12 06:38:34');
 
 -- --------------------------------------------------------
 
@@ -277,6 +277,8 @@ CREATE TABLE `product` (
   `tomtat` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `noidung` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `hinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gia` int(10) UNSIGNED NOT NULL,
   `soluong` int(10) UNSIGNED NOT NULL,
   `noibat` int(11) NOT NULL DEFAULT '0',
@@ -289,13 +291,27 @@ CREATE TABLE `product` (
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id`, `idSubCate`, `idBrand`, `ten`, `tenkodau`, `tomtat`, `noidung`, `hinh`, `gia`, `soluong`, `noibat`, `soluotxem`, `created_at`, `updated_at`) VALUES
-(1, 3, 2, 'Product1 Product1', 'product1-product1', 'Product1 Product1', '<p>Product1 Product1</p>', 'lU6K_girl2.jpg', 13, 13, 1, 0, NULL, '2017-03-09 08:27:24'),
-(2, 2, 3, 'Product2 Product2', 'product2-product2', 'Product2 Product2', '<p>Product2 Product2</p>', 'PeUM_girl3.jpg', 11, 13, 0, 0, NULL, '2017-03-09 08:27:04'),
-(3, 3, 3, 'Product3 Product3 Product3', 'product3-product3-product3', 'Product3 Product3', '<p>Product3Product3 Product3</p>', 'PHsQ_rina-ishihara.png', 13, 1, 0, 0, NULL, '2017-03-09 08:16:49'),
-(4, 1, 5, 'Product4 Product4', 'product4-product4', 'Product4 Product4', '<p>Product4 Product4 Product4</p>', 'wXEF_942840782_902412033_574_574.jpg', 17, 13, 0, 0, NULL, '2017-03-09 08:16:26'),
-(5, 2, 4, 'Sản phẩm product 5', 'san-pham-product-5', 'Sản phẩm product 5', '<p>Sản phẩm product 5 Sản phẩm product 5 Sản phẩm product 5</p>', 'Gbdr_maxresdefault.jpg', 69, 11, 0, 0, NULL, '2017-03-09 08:13:55'),
-(6, 14, 9, 'Giày Nike chính hãng cao cấp', 'giay-nike-chinh-hang-cao-cap', 'Giày Nike chính hãng cao cấp', '<p>Giày Nike chính hãng cao cấp Giày Nike chính hãng cao cấp Giày Nike chính hãng cao cấp Giày Nike chính hãng cao cấp</p>', '5TVJ_942840782_902412033_574_574.jpg', 13, 1, 1, 0, '2017-03-09 07:22:22', '2017-03-09 07:22:22');
+INSERT INTO `product` (`id`, `idSubCate`, `idBrand`, `ten`, `tenkodau`, `tomtat`, `noidung`, `hinh`, `hinh2`, `hinh3`, `gia`, `soluong`, `noibat`, `soluotxem`, `created_at`, `updated_at`) VALUES
+(7, 18, 7, 'Easy Polo Black Edition', 'easy-polo-black-edition', 'Easy Polo Black Edition', '<p>Easy Polo Black Edition</p>', 'k7Sw_product1.jpg', '', '', 56, 11, 1, 0, '2017-03-12 03:55:53', '2017-03-12 03:55:53'),
+(8, 23, 3, 'Easy Polo Black Edition 3', 'easy-polo-black-edition-3', 'Easy Polo Black Edition', '<p>Easy Polo Black Edition</p>', 'GPF4_product2.jpg', '8h5t_product3.jpg', 'IQfB_product4.jpg', 56, 13, 1, 0, '2017-03-12 05:44:35', '2017-03-12 06:31:32'),
+(9, 31, 7, 'Easy Polo Black Edition 4', 'easy-polo-black-edition-4', 'Easy Polo Black Edition 4', '<p>Easy Polo Black Edition 4</p>', '9PyU_product3.jpg', '7KLJ_product4.jpg', 'TNjE_product1.jpg', 34, 1, 0, 0, '2017-03-12 07:00:42', '2017-03-12 07:00:42'),
+(10, 32, 5, 'Easy Polo Black Edition 5.2', 'easy-polo-black-edition-52', 'Easy Polo Black Edition 5', '<p>Easy Polo Black Edition 5</p>', 'Nv1w_product4.jpg', 'SikL_product5.jpg', 'Krb5_product6.jpg', 27, 32, 0, 0, '2017-03-12 07:01:45', '2017-03-12 07:20:01'),
+(12, 22, 3, 'Easy Polo Black Edition 7', 'easy-polo-black-edition-7', 'Easy Polo Black Edition 7', '<p>Easy Polo Black Edition 7</p>', '2tP6_gallery2.jpg', 'mRvL_product2.jpg', 'ZksG_gallery1.jpg', 3, 4, 1, 0, '2017-03-12 07:03:56', '2017-03-12 07:03:56'),
+(14, 31, 4, 'Userwear Rose 1.1', 'userwear-rose-11', 'Userwear Rose 1.1', '<p>Userwear Rose</p>', '3dle_product5.jpg', 'rzfH_product3.jpg', 'Q87C_product1.jpg', 27, 56, 0, 0, '2017-03-12 08:58:39', '2017-03-13 02:18:37'),
+(15, 31, 10, 'Easy Polo Black Edition Dior', 'easy-polo-black-edition-dior', 'Easy Polo Black Edition Dior', '<p>Easy Polo Black Edition Dior</p>', 'Rex8_product3.jpg', 't0iL_product4.jpg', 'ZjRg_product5.jpg', 29, 29, 0, 0, '2017-03-12 08:59:46', '2017-03-13 02:19:40'),
+(17, 17, 3, 'Sportswear Hot 2', 'sportswear-hot-2', 'Sportswear Hot 2', '<p>Sportswear Hot 2</p>', 'zLKZ_product2.jpg', 'IOWZ_gallery2.jpg', 'ZNzC_product6.jpg', 29, 23, 1, 0, '2017-03-12 09:55:47', '2017-03-12 09:55:47'),
+(18, 17, 3, 'Sportswear Hot 3', 'sportswear-hot-3', 'Sportswear Hot 3', '<p>Sportswear Hot 3</p>', 'FX21_product6.jpg', 'tok0_product5.jpg', 'kqpg_product4.jpg', 27, 34, 1, 0, '2017-03-13 02:21:09', '2017-03-13 02:21:09'),
+(19, 17, 3, 'Sportswear Hot 4', 'sportswear-hot-4', 'Sportswear Hot 4', '<p>Sportswear Hot 4</p>', 'WTjx_product5.jpg', 'b0VN_product4.jpg', 'gene_product3.jpg', 37, 42, 1, 0, '2017-03-13 02:21:41', '2017-03-13 02:21:41'),
+(20, 17, 3, 'Sportswear Hot 5', 'sportswear-hot-5', 'Sportswear Hot 5', '<p>Sportswear Hot 5</p>', 'nqkp_product4.jpg', 'd6w8_product3.jpg', 'wJXy_product2.jpg', 27, 64, 1, 0, '2017-03-13 02:22:23', '2017-03-13 02:22:23'),
+(21, 24, 7, 'Product Mens Hot 3', 'product-mens-hot-3', 'Product Mens Hot 3', '<p>Product Mens Hot 3</p>', 'BGja_product3.jpg', 'zvnk_product2.jpg', 'UkG8_product1.jpg', 27, 13, 1, 0, '2017-03-13 02:24:32', '2017-03-13 02:24:32'),
+(22, 24, 3, 'Product Mens Hot 4', 'product-mens-hot-4', 'Product Mens Hot 4', '<p>Product Mens Hot 4</p>', 't6hg_product2.jpg', 'lgw7_product1.jpg', 'bYuV_product6.jpg', 39, 43, 1, 0, '2017-03-13 02:25:05', '2017-03-13 02:25:05'),
+(24, 30, 5, 'Womens Product Recomemded', 'womens-product-recomemded', 'Womens Product Recomemded', '<p>Womens Product Recomemded</p>', '7ijm_product4.jpg', 'uUWp_product5.jpg', 'NVnf_product6.jpg', 37, 27, 1, 0, '2017-03-13 02:31:51', '2017-03-13 02:31:51'),
+(25, 31, 7, 'Womens Product Recomemded 2.1', 'womens-product-recomemded-21', 'Womens Product Recomemded 2.1', '<p>Womens Product Recomemded 2</p>', 'pefH_product5.jpg', 'xYxP_product6.jpg', 'g6Pc_product4.jpg', 27, 98, 0, 0, '2017-03-13 02:32:18', '2017-03-13 02:39:52'),
+(26, 31, 7, 'Womens Product Recomemded 3', 'womens-product-recomemded-3', 'Womens Product Recomemded 3', '<p>Womens Product Recomemded 3</p>', 'Omtz_girl3.jpg', 'kkzh_product5.jpg', '7xis_product3.jpg', 64, 36, 1, 0, '2017-03-13 02:33:16', '2017-03-13 02:33:16'),
+(27, 22, 7, 'Mens Product 3', 'mens-product-3', 'Mens Product 3', '<p>Mens Product 3</p>', 'yPeC_product2.jpg', 'Njqw_gallery2.jpg', 'f1n2_girl1.jpg', 27, 16, 0, 0, '2017-03-13 02:34:31', '2017-03-13 02:34:31'),
+(29, 15, 1, 'Sportswear Product 1.1', 'sportswear-product-11', 'Sportswear Product 1.1', '<p>Sportswear Product 1.1</p>', 'Zcoh_product11.jpg', 'Ofvb_product9.jpg', 'Lr8d_product10.jpg', 64, 45, 0, 0, '2017-03-13 02:38:09', '2017-03-13 02:38:09'),
+(30, 31, 4, 'Mens Product 1.1', 'mens-product-11', 'Mens Product 1.1', '<p>Mens Product 1.1</p>', 'fCBe_product8.jpg', 'emHj_product7.jpg', 'RX9X_product9.jpg', 56, 75, 0, 0, '2017-03-13 02:38:52', '2017-03-13 02:38:52'),
+(31, 32, 4, 'Womens Product 4', 'womens-product-4', 'Womens Product 4', '<p>Womens Product 4</p>', 'ECXU_product9.jpg', 'KTb6_product8.jpg', 'zM6y_product7.jpg', 27, 27, 1, 0, '2017-03-13 02:40:45', '2017-03-13 02:40:45');
 
 -- --------------------------------------------------------
 
@@ -318,11 +334,10 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id`, `ten`, `hinh`, `noidung`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'Slide 1', 'LMCg_gallery4.jpg', '<p>Slide1</p>', 'Slide1', NULL, '2017-03-09 09:13:35'),
-(2, 'Slide 2', 'bzpT_girl1.jpg', '<p>Slide2</p>', 'Slide2', NULL, '2017-03-09 09:13:24'),
-(3, 'Slide 3', 'HoAS_girl3.jpg', '<p>Slide3</p>', 'Slide3', NULL, '2017-03-09 09:13:52'),
-(4, 'Slide4', '', 'Slide4', 'Slide4', NULL, NULL),
-(5, 'Slide55', 'cjE3_girl3.jpg', '<p>Slide5</p>', 'Slide5', NULL, '2017-03-09 09:34:13');
+(6, 'Sale 20%', '7uGk_girl1.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 'product', '2017-03-12 04:20:29', '2017-03-12 04:24:05'),
+(7, 'Cam kết hàng chính hãng 100%', 'F7Aa_girl3.jpg', '<p>Nếu phát hiện hàng giả,hàng nhái đền gấp 10!</p>', 'product', '2017-03-12 04:21:56', '2017-03-12 04:24:22'),
+(8, 'E-shop - Giá rẻ cho mọi nhà.', '8eAU_girl2.jpg', '<p>Luôn tự hào là 1 shop có chất lượng cũng như giá thành tốt nhất Hà Nội</p>', 'product', '2017-03-12 04:23:14', '2017-03-12 04:24:40'),
+(9, 'Nhấc mông lên và đến với chúng tôi', 'LU34_girl1.jpg', '<p>Đội ngũ nhân viên 25/24. Tư vấn nhiệt tình vì khách hàng.</p>', 'blog', '2017-03-12 04:26:16', '2017-03-12 04:26:16');
 
 -- --------------------------------------------------------
 
@@ -344,18 +359,25 @@ CREATE TABLE `sub_category` (
 --
 
 INSERT INTO `sub_category` (`id`, `idCate`, `ten`, `tenkodau`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Subcategory 11', 'subcategory-11', NULL, '2017-03-09 02:24:52'),
-(2, 4, 'Subcategory2', 'Subcategory2', NULL, NULL),
-(3, 5, 'Subcategory3', 'Subcategory3', NULL, NULL),
-(4, 3, 'Subcategory4', 'Subcategory4', NULL, NULL),
-(6, 1, 'Subcategory6', 'Subcategory6', NULL, NULL),
-(7, 1, 'Subcategory7', 'Subcategory7', NULL, NULL),
-(8, 2, 'Subcategory8', 'Subcategory8', NULL, NULL),
-(9, 5, 'Subcategory9', 'Subcategory9', NULL, NULL),
-(11, 4, 'Sub Category 13', 'sub-category-13', '2017-03-09 02:13:02', '2017-03-09 02:13:02'),
-(12, 5, 'Sub category test', 'sub-category-test', '2017-03-09 02:27:43', '2017-03-09 02:27:43'),
-(13, 1, '11111111', '11111111', '2017-03-09 02:27:58', '2017-03-09 02:27:58'),
-(14, 14, 'Giày Nike', 'giay-nike', '2017-03-09 07:16:35', '2017-03-09 07:16:35');
+(15, 1, 'Nike', 'nike', '2017-03-12 03:02:36', '2017-03-12 03:02:36'),
+(16, 1, 'Under Armour', 'under-armour', '2017-03-12 03:02:52', '2017-03-12 03:02:52'),
+(17, 1, 'Adidas', 'adidas', '2017-03-12 03:03:02', '2017-03-12 03:03:02'),
+(18, 1, 'Puma', 'puma', '2017-03-12 03:03:10', '2017-03-12 03:03:10'),
+(19, 1, 'ASICS', 'asics', '2017-03-12 03:03:18', '2017-03-12 03:03:18'),
+(20, 2, 'Fendi', 'fendi', '2017-03-12 03:03:40', '2017-03-12 03:03:40'),
+(21, 2, 'Guess', 'guess', '2017-03-12 03:04:20', '2017-03-12 03:04:20'),
+(22, 2, 'Valentino', 'valentino', '2017-03-12 03:04:27', '2017-03-12 03:04:27'),
+(23, 2, 'Dior', 'dior', '2017-03-12 03:04:33', '2017-03-12 03:04:33'),
+(24, 2, 'Versace', 'versace', '2017-03-12 03:04:39', '2017-03-12 03:04:39'),
+(25, 2, 'Armani', 'armani', '2017-03-12 03:04:45', '2017-03-12 03:04:45'),
+(26, 2, 'Prada', 'prada', '2017-03-12 03:04:51', '2017-03-12 03:04:51'),
+(27, 2, 'Dolce and Gabbana', 'dolce-and-gabbana', '2017-03-12 03:04:56', '2017-03-12 03:04:56'),
+(28, 2, 'Chanel', 'chanel', '2017-03-12 03:05:02', '2017-03-12 03:05:02'),
+(29, 2, 'Gucci', 'gucci', '2017-03-12 03:05:06', '2017-03-12 03:05:06'),
+(30, 3, 'Luis Vutton', 'luis-vutton', '2017-03-12 03:06:05', '2017-03-12 03:06:50'),
+(31, 3, 'Fox and Rose', 'fox-and-rose', '2017-03-12 03:07:45', '2017-03-12 03:07:45'),
+(32, 3, 'Wonderful', 'wonderful', '2017-03-12 03:09:08', '2017-03-12 03:09:08'),
+(33, 3, 'Mommy', 'mommy', '2017-03-12 03:10:14', '2017-03-12 03:10:14');
 
 -- --------------------------------------------------------
 
@@ -377,17 +399,26 @@ CREATE TABLE `sub_foot_category` (
 --
 
 INSERT INTO `sub_foot_category` (`id`, `idFoot`, `ten`, `tenkodau`, `created_at`, `updated_at`) VALUES
-(9, 3, 'Sub Footer category1', 'Sub Footer category1', NULL, NULL),
-(10, 1, 'Sub Footer category2', 'Sub Footer category2', NULL, NULL),
-(11, 3, 'Sub Footer category3', 'Sub Footer category3', NULL, NULL),
-(12, 3, 'Sub Footer category4', 'Sub Footer category4', NULL, NULL),
-(13, 5, 'Sub Footer category5', 'Sub Footer category5', NULL, NULL),
-(14, 2, 'Sub Footer category56', 'Sub Footer category56', NULL, NULL),
-(15, 2, 'Sub Footer category58', 'Sub Footer category56', NULL, NULL),
-(16, 3, 'Sub Footer category7', 'Sub Footer category7', NULL, NULL),
-(17, 1, 'Sub Footer thuộc 1', 'sub-footer-thuoc-1', '2017-03-09 03:45:55', '2017-03-09 03:45:55'),
-(18, 6, 'Sub Footer thuộc 5', 'sub-footer-thuoc-5', '2017-03-09 03:46:09', '2017-03-09 03:46:09'),
-(20, 6, 'Sub footer 5-5-5', 'sub-footer-5-5-5', '2017-03-09 03:52:01', '2017-03-09 03:52:47');
+(18, 9, 'Online Help', 'online-help', '2017-03-12 06:39:31', '2017-03-12 06:39:31'),
+(19, 9, 'Contact Us', 'contact-us', '2017-03-12 06:39:41', '2017-03-12 06:39:54'),
+(20, 9, 'Order Status', 'order-status', '2017-03-12 06:40:04', '2017-03-12 06:40:04'),
+(21, 9, 'Change Location', 'change-location', '2017-03-12 06:40:12', '2017-03-12 06:40:12'),
+(22, 9, 'FAQ\'s', 'faqs', '2017-03-12 06:40:19', '2017-03-12 06:40:19'),
+(23, 10, 'T-shrit', 't-shrit', '2017-03-12 06:40:33', '2017-03-12 06:40:33'),
+(24, 10, 'Mens', 'mens', '2017-03-12 06:40:39', '2017-03-12 06:40:39'),
+(25, 10, 'Womens', 'womens', '2017-03-12 06:40:44', '2017-03-12 06:40:44'),
+(26, 10, 'Gift Cards', 'gift-cards', '2017-03-12 06:40:52', '2017-03-12 06:40:52'),
+(27, 10, 'Shoes', 'shoes', '2017-03-12 06:40:58', '2017-03-12 06:40:58'),
+(28, 11, 'Terms Of Use', 'terms-of-use', '2017-03-12 06:41:15', '2017-03-12 06:41:15'),
+(29, 11, 'Privacy Policy', 'privacy-policy', '2017-03-12 06:41:49', '2017-03-12 06:41:49'),
+(30, 11, 'Refund Policy', 'refund-policy', '2017-03-12 06:42:04', '2017-03-12 06:42:04'),
+(31, 11, 'Billing System', 'billing-system', '2017-03-12 06:42:14', '2017-03-12 06:42:14'),
+(32, 11, 'Ticket System', 'ticket-system', '2017-03-12 06:42:26', '2017-03-12 06:42:26'),
+(33, 12, 'Company Information', 'company-information', '2017-03-12 06:42:45', '2017-03-12 06:42:45'),
+(34, 12, 'Careers', 'careers', '2017-03-12 06:42:52', '2017-03-12 06:42:52'),
+(35, 12, 'Store Location', 'store-location', '2017-03-12 06:42:57', '2017-03-12 06:42:57'),
+(36, 12, 'Affillate Program', 'affillate-program', '2017-03-12 06:43:02', '2017-03-12 06:43:02'),
+(37, 12, 'Copyright', 'copyright', '2017-03-12 06:43:08', '2017-03-12 06:43:08');
 
 -- --------------------------------------------------------
 
@@ -420,7 +451,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `quyen`, `remember_token
 (7, 'Use7@gmail.com', 'Use7@gmail.com', 'Use7@gmail.com', 0, NULL, NULL, NULL),
 (9, 'Use9@gmail.com', 'Use9@gmail.com', 'Use9@gmail.com', 0, NULL, NULL, NULL),
 (10, 'Use911@gmail.com', 'Use911@gmail.com', 'Use911@gmail.com', 1, NULL, NULL, NULL),
-(11, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', '$2y$10$k.k6WFpaAdZH0wHq8jGfHO3UJi1rQ/Hn7tsXdeeDwGkjGrdtqrV2i', 2, NULL, NULL, '2017-03-08 08:21:34');
+(11, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', '$2y$10$k.k6WFpaAdZH0wHq8jGfHO3UJi1rQ/Hn7tsXdeeDwGkjGrdtqrV2i', 2, 'gnmN9kJ6oBC1bGZW9fFyjlXXjs8P6RWbw5q2q21dnFNOcDxLiYP5zV5osAOI', NULL, '2017-03-16 10:02:25'),
+(12, 'kaideptrai1', 'kai1@gmail.com', '$2y$10$lzpWc8mEiPhBqbxQLnN3a.XliP1QKhpRDA3il8phCUPQkvqKp2dru', 0, NULL, '2017-03-10 04:13:56', '2017-03-10 04:13:56'),
+(13, 'đỗ đình dự 2', 'kaihandsome@gmail.com', '$2y$10$VRCq3Bev6iL1.BhWNIeGHOF.SsjwKVptocfcCtxG0oMDb1GiKvLAe', 0, NULL, '2017-03-16 01:29:45', '2017-03-16 01:35:06'),
+(14, 'đỗ đình dự 3', 'dinhdu3@gmail.com', '$2y$10$vGzwm/Fl6ogGvrVVWUtXDeBU.0tjL46L2rOcAlqVF5.xBysL6Euny', 0, 'DflMyzQUI5CxUoHUYHX2VAPAFbAOoI0DeGnVkiPAydYuRnZKZSeNozfa2xNN', '2017-03-16 01:31:42', '2017-03-16 01:34:48'),
+(15, 'đỗ đình dự 4', 'dinhdu4@gmail.com', '$2y$10$.dseuk5.a1XmI4sLMspMWeJDldN3Udg3S2bGpd/NSx5Ik5mapb.t2', 0, NULL, '2017-03-16 01:36:12', '2017-03-16 01:36:12'),
+(16, 'đình dự 6', 'dinhdu5@gmail.com', '$2y$10$1JBcYgTg69hMnqg7ZJoGmex309oOyCIJU8nIAi2OmwXbKXd1Pmbw2', 0, 'UHNtAIWIBbeYRyyhXRGQRyO7VLY3a0doq24RA8PK2nEF3FPzk7vB1ruPrsbc', '2017-03-16 01:37:21', '2017-03-16 02:15:08');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -529,27 +565,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `advertising`
 --
 ALTER TABLE `advertising`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT cho bảng `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT cho bảng `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT cho bảng `comment_blog`
 --
 ALTER TABLE `comment_blog`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT cho bảng `comment_product`
 --
@@ -559,7 +595,7 @@ ALTER TABLE `comment_product`
 -- AUTO_INCREMENT cho bảng `foot_category`
 --
 ALTER TABLE `foot_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
@@ -569,27 +605,27 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT cho bảng `sub_category`
 --
 ALTER TABLE `sub_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT cho bảng `sub_foot_category`
 --
 ALTER TABLE `sub_foot_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- Các ràng buộc cho các bảng đã đổ
 --

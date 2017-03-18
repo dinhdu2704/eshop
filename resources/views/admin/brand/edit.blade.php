@@ -30,11 +30,11 @@
                         </div>
                     @endif
                     {{-- muốn gửi được dữ liệu đi phải gửi đến route --}}
-                        <form action="admin/brand/edit/{{ $brand->id }}" method="POST">
+                        <form action="{{ url('admin/brand/edit/'.$brand->id) }}" method="POST">
                             
                             <div class="form-group">
                                 <label>Brand</label>
-                                <input class="form-control" name="Ten" placeholder="Điền tên thể loại" value="{!! $brand->ten !!}"/>
+                                <input class="form-control" name="Ten" placeholder="Điền tên thể loại" value="@if(old('Ten')) {!! old('Ten') !!} @else {!! $brand->ten !!} @endif"/>
                             </div>
                             <button type="submit" class="btn btn-success">Edit Brand</button>
                             <button type="reset" class="btn btn-warning">Reset</button>

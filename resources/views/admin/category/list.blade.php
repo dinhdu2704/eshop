@@ -49,7 +49,7 @@
                                         <td>{{ $cate->tenkodau }}</td>
                                         <td>
                                             @if ($cate->created_at)
-                                                {{ $cate->created_at }}
+                                                {{ Carbon\Carbon::createFromTimestamp(strtotime($cate->created_at))->diffForHumans()  }}
                                             @endif
                                         </td>
                                         <td class="text-center" width="10%">

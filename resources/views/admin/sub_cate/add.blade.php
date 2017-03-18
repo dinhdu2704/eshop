@@ -30,19 +30,19 @@
                                 {!! session('thongbao') !!}
                             </div>
                         @endif
-                        <form action="admin/sub-category/add" method="POST">
+                        <form action="{{ url('admin/sub-category/add') }}" method="POST">
                             <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name="Category">
                                 @foreach ($category as $cate)
-                                    <option value="{!! $cate->id !!}">{!! $cate->ten !!}</option>
+                                    <option @if(old('Category')==$cate->id) {{ "selected" }} @endif value="{!! $cate->id !!}">{!! $cate->ten !!}</option>
                                 @endforeach
                                     
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Sub Category</label>
-                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" />
+                                <input class="form-control" name="Ten" placeholder="Vui lòng đừng bỏ trống" value="{!! old('Ten') !!}" />
                             </div>
 
                             <button type="submit" class="btn btn-success">Add SubCategory</button>

@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     | This is the SMTP port used by your application to deliver e-mails to
     | users of the application. Like the host we have set this value to
     | stay compatible with the Mailgun e-mail application by default.
-    |
+    |587,468
     */
 
     'port' => env('MAIL_PORT', 587),
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'dinhdu2704@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Đỗ Đình Dự'),
     ],
 
     /*
@@ -68,7 +68,7 @@ return [
     | Here you may specify the encryption protocol that should be used when
     | the application send e-mail messages. A sensible default using the
     | transport layer security protocol should provide great security.
-    |
+    |tls or ssl
     */
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
@@ -111,7 +111,8 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-
+    'pretend' => false,
+    
     'markdown' => [
         'theme' => 'default',
 
