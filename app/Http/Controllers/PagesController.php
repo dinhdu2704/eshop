@@ -16,6 +16,9 @@ use App\User;
 use App\Blog;
 use App\CommentBlog;
 use App\CommentProduct;
+use App\Customer;
+use App\CustomOrder;
+use DB;
 use Mail;
 use Cart;
 use Illuminate\Support\Facades\Auth;
@@ -151,7 +154,11 @@ class PagesController extends Controller
         $user->quyen=0;
         $user->save();
 
-        return redirect('login.html')->with('thongbao','Đăng ký thành công');
+        if(Auth::attempt(['email' =>$request->Email, 'password' => $request->Password]))
+        {
+            return redirect('home')->with('success','Đăng ký thành công ^^');
+        }
+        
     }
     function getProfile(){
         return view('pages.profile');
@@ -255,8 +262,9 @@ class PagesController extends Controller
     function cart(){
         $content= Cart::content();
         $subtotal= Cart::subtotal();
-        $vat= $subtotal*10/100;
-        return view('pages.cart',['content'=>$content,'subtotal'=>$subtotal,'vat'=>$vat]);
+        $count= Cart::count();
+        //$vat= $subtotal*10/100; ,'vat'=>$vat
+        return view('pages.cart',['content'=>$content,'subtotal'=>$subtotal,'count'=>$count]);
     }
    
     //delete product in cart
@@ -265,13 +273,238 @@ class PagesController extends Controller
         Cart::remove($id);
         return redirect('cart.html');
     }
+    function deleteAll(){
+        Cart::destroy();
+        return redirect('cart.html');
+    }
     //check out
     function checkout(){
-        return view('pages.checkout');
+        $content= Cart::content();
+        $subtotal= Cart::subtotal();
+        return view('pages.checkout',['content'=>$content,'subtotal'=>$subtotal]);
     }
 
+    function postcheckout(Request $request){
+        $pass1= $request->Password;
+        $pass2= $request->PasswordAgain;
+        if(Auth::attempt(['email' => Auth::User()->email,'password' => $pass2]) && $pass1==$pass2)
+        {
+            $this->validate($request,
+            [
+                'Phone'=>'min:8|max:20|alpha_num'
+            ],
+            [
+                'Phone.min'=>'Số điện thoại bạn nhập không đúng!',
+                'Phone.max'=>'Số điện thoại bạn nhập không đúng!',
+                'Phone.alpha_num'=>'Số điện thoại bạn nhập không đúng!'
+            ]);
+
+            // lưu
+            $customer= new Customer();
+            $customer->idUser= Auth::User()->id;
+            if($request->Company)
+            {
+                $customer->company=$request->Company;
+            }
+            else{
+                $customer->company="";
+            }
+            $customer->address=$request->Address;
+            $customer->message=$request->message;
+            if($request->Title)
+            {
+                $customer->title=$request->Title;
+            }
+            else{
+                $customer->title="";
+            }
+            $customer->phone=$request->Phone;
+            $customer->subtotal= Cart::subtotal();
+            $customer->status=0;
+            $customer->save();
+
+            $customer2 = Customer::orderBy('id','desc')->select('id')->first();
+            
+            foreach(Cart::content() as $row){
+                $order=new CustomOrder();
+                $order->idCustom= $customer2->id;
+                $order->idPro= $row->id;
+                $order->qty= $row->qty;
+                $order->price=$row->price;
+                $order->total= $row->qty*$row->price;
+                $order->save();
+            }
+            Cart::destroy();
+            return redirect('checkout.html')->with('success','ok');
+        }
+        
+        else
+        {
+            return redirect('checkout.html')->with('thongbao','Mật khẩu bạn nhập chưa chính xác!');
+        }
+
+    }
+    // contact
     function getContact(){
         return view('pages.contact');
     }
+    // ajax Product
+    function postProduct(Request $request){
+        if($request->ajax())
+        {
+            if($request->price_range)
+                $priceArr=explode(',',$request->price_range);
+                $productArr = DB::table('product')->whereBetween('gia', array($priceArr[0], $priceArr[1]))->orderBy('gia','asc')->paginate(12);
+                foreach ($productArr as $prod) { 
 
+                    echo '<div class="col-sm-4 col-md-4">';
+                        echo '<div class="product-image-wrapper">';
+                            echo '<div class="single-products">';
+                                echo '<div class="productinfo text-center">';
+                                    echo '<img src="upload/product/'.$prod->hinh.'" alt="" />';
+                                    echo '<h2>$'.$prod->gia.'</h2>';
+                                    echo '<p>'. $prod->ten .'</p>';
+                                    echo '<a href="product-detail/"'. $prod->tenkodau."-".$prod->id.".html " .'class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                                echo '</div>';
+                                echo '<div class="product-overlay">';
+                                    echo '<div class="overlay-content">';
+                                        echo '<h2>$'. $prod->gia .'</h2>';
+                                        echo '<p>'. $prod->ten .'</p>';
+                                        echo "<a class='btn btn-default add-to-cart' href='product-detail/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-info'></i>View Detail</a>";
+                                            echo'<br>';
+                                        echo "<a class='btn btn-default add-to-cart' href='buy/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-shopping-cart'></i>Add to cart</a>";
+                                    echo '</div>';
+
+                                   //  echo 'if ($prod->noibat==1 && $prod->soluong > 50)
+                                   //          echo '<img src="images/home/new.png" class="new" alt="" />
+                                   //  echo '@endif
+                                   //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
+                                   //          echo '<img src="images/home/sale.png" class="new" alt="" />
+                                   // echo ' echo '@endif
+                                            
+                                echo '</div>';
+                            echo '</div>';
+                            echo '<div class="choose">';
+                                echo '<ul class="nav nav-pills nav-justified">';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+                                echo '</ul>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                   
+                }
+                    // echo "<div class='col-sm-12 col-md-12 text-center page-new'>";
+                    //     echo $productArr->render();
+                    // echo "</div>";
+        }
+    }
+    // ajax Brand
+    function postBrand(Request $request){
+        if($request->ajax())
+        {
+            if($request->price_range&& $request->idBrand)
+            {
+                $priceArr=explode(',',$request->price_range);
+                $idBrand= $request->idBrand;
+                $productArr = DB::table('product')->where('idBrand',$idBrand)->whereBetween('gia', array($priceArr[0], $priceArr[1]))->orderBy('gia','asc')->paginate(12);
+                foreach ($productArr as $prod) { 
+                    echo '<div class="col-sm-4 col-md-4">';
+                        echo '<div class="product-image-wrapper">';
+                            echo '<div class="single-products">';
+                                echo '<div class="productinfo text-center">';
+                                    echo '<img src="upload/product/'.$prod->hinh.'" alt="" />';
+                                    echo '<h2>$'.$prod->gia.'</h2>';
+                                    echo '<p>'. $prod->ten .'</p>';
+                                    echo '<a href="product-detail/"'. $prod->tenkodau."-".$prod->id.".html " .'class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                                echo '</div>';
+                                echo '<div class="product-overlay">';
+                                    echo '<div class="overlay-content">';
+                                        echo '<h2>$'. $prod->gia .'</h2>';
+                                        echo '<p>'. $prod->ten .'</p>';
+                                        echo "<a class='btn btn-default add-to-cart' href='product-detail/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-info'></i>View Detail</a>";
+                                            echo'<br>';
+                                        echo "<a class='btn btn-default add-to-cart' href='buy/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-shopping-cart'></i>Add to cart</a>";
+                                    echo '</div>';
+
+                                   //  echo 'if ($prod->noibat==1 && $prod->soluong > 50)
+                                   //          echo '<img src="images/home/new.png" class="new" alt="" />
+                                   //  echo '@endif
+                                   //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
+                                   //          echo '<img src="images/home/sale.png" class="new" alt="" />
+                                   // echo ' echo '@endif
+                                            
+                                echo '</div>';
+                            echo '</div>';
+                            echo '<div class="choose">';
+                                echo '<ul class="nav nav-pills nav-justified">';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+                                echo '</ul>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }   
+        }
+    }
+    // ajax Category
+    function postCategory(Request $request)
+    {
+        if($request->ajax())
+        {
+            if($request->price_range && $request->idSubCate)
+            {
+                $priceArr=explode(',',$request->price_range);
+                $idSubCate=$request->idSubCate;
+
+                $productArr=DB::table('product')->where('idSubCate',$idSubCate)->whereBetween('gia',array($priceArr[0],$priceArr[1]))->orderBy('gia','asc')->paginate(12);
+
+                foreach ($productArr as $prod) { 
+                    echo '<div class="col-sm-4 col-md-4">';
+                        echo '<div class="product-image-wrapper">';
+                            echo '<div class="single-products">';
+                                echo '<div class="productinfo text-center">';
+                                    echo '<img src="upload/product/'.$prod->hinh.'" alt="" />';
+                                    echo '<h2>$'.$prod->gia.'</h2>';
+                                    echo '<p>'. $prod->ten .'</p>';
+                                    echo '<a href="product-detail/"'. $prod->tenkodau."-".$prod->id.".html " .'class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                                echo '</div>';
+                                echo '<div class="product-overlay">';
+                                    echo '<div class="overlay-content">';
+                                        echo '<h2>$'. $prod->gia .'</h2>';
+                                        echo '<p>'. $prod->ten .'</p>';
+                                        echo "<a class='btn btn-default add-to-cart' href='product-detail/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-info'></i>View Detail</a>";
+                                            echo'<br>';
+                                        echo "<a class='btn btn-default add-to-cart' href='buy/".$prod->tenkodau."-".$prod->id.".html'><i class='fa fa-shopping-cart'></i>Add to cart</a>";
+                                    echo '</div>';
+
+                                   //  echo 'if ($prod->noibat==1 && $prod->soluong > 50)
+                                   //          echo '<img src="images/home/new.png" class="new" alt="" />
+                                   //  echo '@endif
+                                   //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
+                                   //          echo '<img src="images/home/sale.png" class="new" alt="" />
+                                   // echo ' echo '@endif
+                                            
+                                echo '</div>';
+                            echo '</div>';
+                            echo '<div class="choose">';
+                                echo '<ul class="nav nav-pills nav-justified">';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+                                    echo '<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+                                echo '</ul>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        }
+    }
+
+    // search
+    function search(Request $request){
+        $search= $request->search;
+        $product= Product::where('ten','like',"%$search%")->orWhere('tenkodau','like',"%$search%")->paginate(12);
+        return view('pages.search',['product'=>$product,'search'=>$search]);
+    }
 }

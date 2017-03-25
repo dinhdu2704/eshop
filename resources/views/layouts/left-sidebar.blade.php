@@ -50,8 +50,13 @@
 						<div class="price-range"><!--price-range-->
 							<h2>Price Range</h2>
 							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+							<form id="formSlider" type="post" action="product.html">
+								<input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[0,60]" id="sl2" name="aName"><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+								 {{-- <b>Min/Max</b><span id="output"></span> --}}
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+								
+							</form>
 							</div>
 						</div><!--/price-range-->
 						

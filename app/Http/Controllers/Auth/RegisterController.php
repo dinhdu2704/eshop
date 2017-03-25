@@ -6,7 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -36,9 +37,26 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => 'getLogout', 'getRegister', 'postRegister']);
     }
+    public function getRegister(){
+        return redirect("login.html");
+        //return view('pages.login');
+    }
+    public function postRegister(Request $request)
+    {
+        $validator = $this->validator($request->all());
 
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        // Commenting this line should help.
+        Auth::login($this->create($request->all())); 
+        return redirect($this->redirectPath());
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,6 +69,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'PasswordAgain'=>'same:Password'
         ]);
     }
 

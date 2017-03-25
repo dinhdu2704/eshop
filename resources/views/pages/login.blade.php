@@ -1,4 +1,7 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Login" }}
+@endsection
 @section('content')
 <section id="form"><!--form-->
 		<div class="container">
@@ -49,7 +52,7 @@
 				<div class="col-sm-4 col-md-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="signup.html" method="post">
+						<form action="{{ url('signup.html') }}" method="post">
 							<input type="text" name="Ten" placeholder="Name" required />
 							<input type="email" name="Email" placeholder="Email Address" required/>
 							<input type="password" name="Password" placeholder="Password" required/>

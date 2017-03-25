@@ -1,11 +1,16 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Contact" }}
+@endsection
 @section('content')
 	<div id="contact-page" class="container">
     	<div class="bg">
-	    	<div class="row">    		
+	    	<div class="row" style="margin-bottom: 50px;">    		
 	    		<div class="col-sm-12 col-md-12">    			   			
-					<h2 class="title text-center">Contact <strong>Us</strong></h2>    			    				    				
-					<div id="gmap" class="contact-map">
+					<h2 class="title text-center">Contact <strong>Us</strong></h2> 
+						<div class="table-responsive">
+							<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tvcFDXz2XqAckK_UBIB7Vs8VewU" width="100%" height="600px"></iframe>
+						</div>   			 
 					</div>
 				</div>			 		
 			</div>    	

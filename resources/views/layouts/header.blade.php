@@ -116,9 +116,13 @@
 						</div>
 					</div>
 					<div class="col-sm-3 col-md-3">
+					<form method="post" action="search">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							<input type="text" name="search" placeholder="Search" value="{{ old('search') }}" required role="search"/>
+							<a href=""><i class="fa fa-search"></i></a>
 						</div>
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					</form>
 					</div>
 				</div>
 			</div>

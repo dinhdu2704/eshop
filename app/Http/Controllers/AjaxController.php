@@ -11,12 +11,13 @@ class AjaxController extends Controller
     	echo "<img src='".$img."'>";
     }
      // cart update
-    function update(Request $request,$id,$qty){
+    function update(Request $request){
         if($request->ajax()){
-	        $id= $request->id;
-	        $qty=$request->qty;
-	        Cart::update($id,$qty);
-        	echo "oke";
+        	foreach ($request->data as $item) 
+        	{
+		   		Cart::update($item['getId'],$item['qty']);
+        	}
+        	echo "ok";
         }
     }
 }

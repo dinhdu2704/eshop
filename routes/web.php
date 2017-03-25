@@ -198,6 +198,17 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         // delete
         Route::get('delete/{id}','admin\commentProductController@getDelete');
     });
+
+    Route::group(['prefix' => 'customer'], function() {
+        Route::get('list','admin\customerController@listCustomer');
+
+        Route::get('chuagiao','admin\customerController@chuagiao');
+        Route::get('dagiao','admin\customerController@dagiao');
+        Route::get('detail/{id}','admin\customerController@detailCustomer');
+        Route::post('detail/{id}','admin\customerController@postdetailCustomer');
+        Route::get('delete/{id}','admin\customerController@deleteCustomer');
+
+    });
 });
 
 
@@ -214,6 +225,7 @@ Route::get('product.html','PagesController@product');
 Route::get('product-detail/{tenkodau}-{id}.html','PagesController@product_detail')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
 //category
 Route::get('category/{tenkodau}-{id}.html','PagesController@category')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+
 //brand
 Route::get('brand/{tenkodau}-{id}.html','PagesController@brand')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
 //load ajax
@@ -225,6 +237,10 @@ Route::get('login.html','PagesController@getLogin');
 Route::post('login.html','PagesController@postLogin');
 // sign up
 Route::post('signup.html','PagesController@postSignup');
+//already there after laravel auth scaffold
+//Route::get('auth/register', 'Auth\RegisterController@getRegister');
+//Route::post('auth/register', 'Auth\RegisterController@postRegister');
+
 //edit profile
 Route::get('profile.html','PagesController@getProfile');
 Route::post('profile.html','PagesController@postProfile');
@@ -249,11 +265,27 @@ Route::get('buy/{tenkodau}-{id}.html','PagesController@buy')->where(array('tenko
 // cart
 Route::get('cart.html','PagesController@cart')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
 // update cart
-Route::get('update/{id}/{qty}','AjaxController@update');
-// delete product
+Route::post('update','AjaxController@update');
+
+// delete product in cart
 Route::get('delete/{id}.html','PagesController@delete')->where('id','[0-9a-zA-Z_-]+');
+
+//delete all product in cart
+Route::get('delete-cart.html','PagesController@deleteAll');
+
 // checkout
 Route::get('checkout.html','PagesController@checkout');
+Route::post('checkout.html','PagesController@postcheckout');
+
 // contact
 Route::get('contact.html','PagesController@getContact');
 Route::post('contact.html','MailController@postContact');
+
+// ajax product
+Route::post('product.html','PagesController@postProduct');
+// ajax brand
+Route::post('brand.html','PagesController@postBrand');
+// ajax category
+Route::post('category.html','PagesController@postCategory');
+// search
+Route::any('search','PagesController@search');

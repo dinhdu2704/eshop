@@ -156,6 +156,20 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="admin/customer/list"><i class="fa fa-motorcycle"></i>&nbsp;Customers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/customer/list">List Customers</a>
+                                </li>
+                                <li>
+                                    <a href="admin/customer/chuagiao">DS Chưa Giao</a>
+                                </li>
+                                <li>
+                                    <a href="admin/customer/dagiao">DS Đã Giao</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="admin/chart"><i class="fa fa-bar-chart-o fa-fw"></i>Chart</a>
                         </li>
                         <li>

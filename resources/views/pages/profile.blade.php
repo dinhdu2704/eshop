@@ -1,4 +1,7 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Profile" }}
+@endsection
 @section('content')
 <section id="form"><!--form-->
 		<div class="container">

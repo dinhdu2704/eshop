@@ -1,7 +1,15 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Home" }}
+@endsection
 @section('content')
 
 	@include('layouts.slide')
+	@if (session('success'))
+		{!! "<script>
+			alert('Đăng ký thành công ^^');
+		</script>" !!}
+	@endif
 	<section>
 		<div class="container">
 			<div class="row">
@@ -30,9 +38,9 @@
 											<div class="overlay-content">
 												<h2>${{ $pro->gia }}</h2>
 												<p>{{ $pro->ten }}</p>
-												<a href="product-detail/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View Detail</a>
+												<a href="product-detail/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Detail</a>
 												<br>
-												<a href="buy/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-info"></i>Add to cart</a>
+												<a href="buy/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											
 											@if ($pro->soluong <=30)

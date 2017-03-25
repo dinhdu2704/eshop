@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('title')
-	{{ "Category" }}
+	{{ "Products" }}
 @endsection
 @section('content')
 	@include('layouts.ads')
@@ -10,15 +10,13 @@
 				<div class="col-sm-3 col-md-3">
 					@include('layouts.left-sidebar')
 				</div>
+				
 				<div class="col-sm-9 col-md-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						@if (count($product3)==0)
-							<h1 class="text-warning text-center">Sản phẩm hiện chưa có</h1>
-							<h3 class="text-center">Ấn vào <a href="javascript:history.back()">đây</a> để quay lại</h3>
-						@endif
-						<div id="load-category">
-							@foreach ($product3 as $prod)
+						<div id="load-ajax">
+							@foreach ($product as $prod)
+							
 							<div class="col-sm-4 col-md-4">
 								<div class="product-image-wrapper">
 									<div class="single-products">
@@ -54,44 +52,49 @@
 									</div>
 								</div>
 							</div>
+							
 							@endforeach
 						</div>
-						@if(count($product3)>0)
-							@foreach ($product3->take(1) as $prod)
-								<input type="hidden" name="idSubCate" value="{{ $prod->subcate->id }}">
-							@endforeach
-						@endif
 						<div class="col-sm-12 col-md-12 text-center">
-							{{ $product3->render() }}
+							{!! $product->appends(['search'=>$search])->fragment('html')->links() !!}
 						</div>
+
 					</div><!--features_items-->
 				</div>
 			</div>
 		</div>
 	</section>
 @endsection
-@section('script')
+{{-- @section('script')
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$("#sl2").slider()
-			.on('slideStop', function(event, ui) {
-			var price_range=this.value;
-			var token= $("input[name='_token']").val();
-			var idSubCate= $("input[name='idSubCate']").val();
-			$.ajax({
-				url:'category.html',
-				method:'post',
-				data: {
-					"price_range":price_range,
-					"_token":token,
-					"idSubCate":idSubCate
-				},
-				success:function(data){
-					//load
-					$("#load-category").html(data);
-				}
-			});
+		$(document).ready(function(){
+
+			$("#sl2").slider({})
+				.on('slide', function(event, ui) {
+			    	// $('#output').html(this.value);
+			    	var price_range= this.value;
+			    	var token = $("input[name='_token']").val();
+			    	var something="something";
+			    	$.ajax({
+						url: 'product.html',
+						method:'post',
+						data:{
+							"_token": token,
+							"price_range": price_range
+						},
+						success:function(data){
+							$("#load-ajax").html(data);
+						}
+					});
+				}).trigger('slide');
+
+
+			// $("#gui").click(function() {
+			// 	var something="something";
+				
+				
+			// });
+			
 		});
-	});
 	</script>
-@endsection
+@endsection --}}

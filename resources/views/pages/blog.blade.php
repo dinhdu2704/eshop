@@ -1,4 +1,7 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Blog" }}
+@endsection
 @section('content')
 	<section>
 		<div class="container">

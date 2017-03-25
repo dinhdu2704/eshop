@@ -89,7 +89,7 @@
 							@if(count($foo->subFooter)>0)
 								<ul class="nav nav-pills nav-stacked">
 									@foreach($foo->subFooter as $subfoo)
-										<li><a href="#">{{ $subfoo->ten }}</a></li>
+										<li><a href="{{ $subfoo->tenkodau }}">{{ $subfoo->ten }}</a></li>
 									@endforeach
 								</ul>
 							@endif

@@ -1,6 +1,9 @@
 @extends('layouts.index')
+@section('title')
+	{{ "Cart" }}
+@endsection
 @section('content')
-<form method="get" action="">
+<form method="post" action="">
 <section id="cart_items">
 		<div class="container">
 			<div class="breadcrumbs">
@@ -9,6 +12,11 @@
 				  <li class="active">Shopping Cart</li>
 				</ol>
 			</div>
+			@if ($count >0)
+				<h2 style="color:#FBAA3F">You have {{ $count }} products</h2>
+			@else
+				<h2 style="color:#FBAA3F">Your Cart Empty</h2>
+			@endif
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed" style="margin-bottom: 0;">
 					<thead>
@@ -38,9 +46,10 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<a class="cart_quantity_down button{{ $item->rowId }}" id="{{ $item->rowId }}" href="javascript:void(0)"> - </a>
-									<input class="cart_quantity_input getid" id="{{ $item->rowId }}" type="text" name="quantity{{ $item->rowId }}" value="{{ ($item->qty) }}" autocomplete="off" size="2" min="0">
-									<a class="cart_quantity_up button{{ $item->rowId }}"  href="javascript:void(0)" id="{{ $item->rowId }}"> + </a>
+									<a class="cart_quantity_down button" href="javascript:void(0)"> - </a>
+									<input class="cart_quantity_input getid" id="{{ $item->rowId }}" type="text" name="quantity" value="{{ ($item->qty) }}" autocomplete="off" size="2" min="0">
+									<a class="cart_quantity_up button" href="javascript:void(0)"> + </a>
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								</div>
 							</td>
 							<td class="cart_total">
@@ -56,9 +65,17 @@
 					</tbody>
 				</table>
 			</div>
+				
 		</div>
+		{{-- delete --}}
+		@if ($count >0)
+		<div class="container">
+			<a style="float:right;margin-top: 0" onclick="return confirm('Bạn chắc muốn xóa hết chứ?')" type="submit" href="{{ url('delete-cart.html') }}" class="btn btn-primary">Delete All</a>
+		</div>
+		@endif
+		{{-- end delete --}}
 </section> <!--/#cart_items-->
-
+		
 <section id="do_action">
 		<div class="container">
 			<div class="heading">
@@ -86,28 +103,23 @@
 							<li class="single_field">
 								<label>Country:</label>
 								<select>
-									<option>United States</option>
-									<option>Bangladesh</option>
-									<option>UK</option>
-									<option>India</option>
-									<option>Pakistan</option>
-									<option>Ucrane</option>
-									<option>Canada</option>
-									<option>Dubai</option>
+									<option>VietNam</option>
+									<option>US</option>
 								</select>
 								
 							</li>
 							<li class="single_field">
 								<label>Region / State:</label>
 								<select>
-									<option>Select</option>
-									<option>Dhaka</option>
-									<option>London</option>
-									<option>Dillih</option>
-									<option>Lahore</option>
-									<option>Alaska</option>
-									<option>Canada</option>
-									<option>Dubai</option>
+									<option>Ha Noi</option>
+									<option>Ho Chi Minh</option>
+									<option>Dong Thap</option>
+									<option>Quang Tri</option>
+									<option>Ha Tinh</option>
+									<option>Ca Mau</option>
+									<option>Vung Tau</option>
+									<option>Nha Trang</option>
+									<option>Da Lat</option>
 								</select>
 							
 							</li>
@@ -117,21 +129,21 @@
 							</li>
 						</ul>
 						<a class="btn btn-default update" href="">Get Quotes</a>
-						<a class="btn btn-default check_out" href="">Continue</a>
+						<a class="btn btn-default check_out" href="{{ url('checkout.html') }}">Continue</a>
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-6">
 					<div class="total_area">
 						<ul>
 							
-							<li>VAT(10%)<span>{!! number_format($vat) !!}$</span></li>
+							<li>VAT(0%)<span>${{ 0 }}</span></li>
 							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>${{ number_format($subtotal+$vat) }}</span></li>
+							<li>Total <span>${{ ($subtotal) }}</span></li>
 						</ul>
 							
 							<a class="btn btn-default update" id="update" href="javascript:void(0)">Update</a>
-							<a class="btn btn-default check_out" href="">Check Out</a>
-							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<a class="btn btn-default check_out" href="{{ url('checkout.html') }}">Check Out</a>
+							
 					</div>
 				</div>
 			</div>
@@ -142,57 +154,60 @@
 @section('script')
 	<script type="text/javascript">
 		$(document).ready(function(){
-			@foreach ($content as $item)
 
-			$(".button{{ $item->rowId }}").on("click", function(){
-				
-				var $button = $(this);
-				var quantity = $("input[name='quantity{{ $item->rowId }}']").val();
-				if ($button.text() == " + ") {
-					var newVal = parseFloat(quantity) + 1;
-				} else 
-				{
-					// Don't allow decrementing below zero
-					if (quantity > 0) {
-					    var newVal = parseFloat(quantity) - 1;
-					} 
-					else {
-					    newVal = 0;
+			$(".button").each(function() {
+				$(this).click(function(event) {
+					var button=$(this).text();
+					var quantity=$(this).parent().find("input[name='quantity']").val();
+					//alert(quantity);
+					if(button==" + "){
+						var newVal= parseInt(quantity) +1;
+						//max sản phẩm là 99
+						if(newVal >=99){
+							newVal=99;
+						}
 					}
-				}
-				$("input[name='quantity{{ $item->rowId }}']").val(newVal);
+					else{
+						
+						if(quantity > 1)
+						{
+							var newVal= parseInt(quantity)-1;
+						}
+						//ko cho nó xuống âm
+						else{
+							newVal=1;
+						}
+					}
+					$(this).parent().find("input[name='quantity']").val(newVal);
+				});
 			});
+
+			
 			$('#update').click(function(){
-				var getId= $('.getid').attr('id');
-				var qty= $("input[name='quantity{{ $item->rowId }}']").val();
-				var token= $("input[name='_token']").val();
+				var data = [];
+				var token = $("input[name='_token']").val();
+				$('.getid').each(function(){
+					var getId = $(this).attr('id');
+					var qty = $(this).val();
+					data.push({
+						'getId': getId,
+						'qty': qty
+					});
+				});
+				// console.log(data) //kiểm tra xem giá trị truyền vào là 1 object thì đúng
 				$.ajax({
-					url: 'update/'+getId+'/'+qty,
-					type:'get',
-					cache:false,
-					data:{"_token":token,"id":getId,"qty":qty},
+					url: 'update',
+					method:'post',
+					data:{
+						"_token": token,
+						"data": data
+					},
 					success:function(data){
-						if(data=="oke")
-							alert("xong");
+						if(data=="ok")
+							window.location ="cart.html"
 					}
 				});
 			});
-			@endforeach
-			
-			//$('#update').click(function(){
-					
-					// $.ajax({
-					// 	url: 'update/'+rowId+'/'+qty,
-					// 	type:'post',
-					// 	cache:false,
-					// 	data:{"_token":token,"id":rowId,"qty":qty},
-					// 	success:function(data){
-					// 		if(data=="oke")
-					// 			alert("yes");
-					// 	}
-					// });
-			//})
-			
 		});
 	</script>
 	

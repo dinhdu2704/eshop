@@ -31,8 +31,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    {{-- fly --}}
-    <script src="js/jquery.minaddc.js?v=b3f817f2"></script>
-    <script type="text/javascript" var_1="true" var_2="false" var_3="false" src="js/flies-obj.js"></script>
+    {{-- <script src="js/jquery.minaddc.js?v=b3f817f2"></script>
+    <script type="text/javascript" var_1="true" var_2="false" var_3="false" src="js/flies-obj.js"></script> --}}
     {{-- end fly --}}
 </head>
 
