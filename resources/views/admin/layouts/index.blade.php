@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="admin_asset/images/icon.png">
     <title>Eshop - Admin</title>
-    <base href=" {{ asset('path') }}">
+    <base href=" {{ asset('') }}">
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

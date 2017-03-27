@@ -170,7 +170,16 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="admin/chart"><i class="fa fa-bar-chart-o fa-fw"></i>Chart</a>
+                            <a href="admin/chart/chart.html"><i class="fa fa-bar-chart-o fa-fw"></i>Chart<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/chart/calculator.html"><i class="fa fa-calendar fa-fw"></i>Thống kê chung</a>
+                                </li>
+                                <li>
+                                    <a href="admin/chart/list.html"><i class="fa fa-money fa-fw"></i>Charts</a>
+                                </li>
+                                
+                            </ul>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -191,7 +200,7 @@
                                     <a href="typography.html">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Icons</a>
+                                    <a href="{{ url('admin/icons.html') }}"> Icons</a>
                                 </li>
                                 <li>
                                     <a href="grid.html">Grid</a>

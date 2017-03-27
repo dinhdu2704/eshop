@@ -86,7 +86,7 @@
 								<li><a href="#details" data-toggle="tab">Products</a></li>
 								<li><a href="#companyprofile" data-toggle="tab">Price</a></li>
 								<li><a href="#tag" data-toggle="tab">Tag</a></li>
-								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+								<li class="active"><a href="#reviews" data-toggle="tab">Reviews @if (count($comment)>0) {{ "(".count($comment).")" }} @endif</a></li>
 							</ul>
 						</div>
 						<div class="tab-content">

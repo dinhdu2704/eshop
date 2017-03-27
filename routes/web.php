@@ -22,8 +22,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
 	//index
     Route::get('/','admin\indexController@index');
     Route::get('index','admin\indexController@index');
-    //chart
-    Route::get('chart','admin\chartController@chart');
+    
     //user
     Route::group(['prefix' => 'user'], function()
     {
@@ -198,7 +197,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         // delete
         Route::get('delete/{id}','admin\commentProductController@getDelete');
     });
-
+    // customer
     Route::group(['prefix' => 'customer'], function() {
         Route::get('list','admin\customerController@listCustomer');
 
@@ -208,6 +207,15 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         Route::post('detail/{id}','admin\customerController@postdetailCustomer');
         Route::get('delete/{id}','admin\customerController@deleteCustomer');
 
+    });
+    // icons
+    Route::get('icons.html', function() {
+        return view('admin.layouts.icons');
+    });
+    //charts and thống kê
+    Route::group(['prefix' => 'chart'], function() {
+        Route::get('list.html','admin\chartController@chart');
+        Route::get('calculator.html','admin\chartController@calculator');
     });
 });
 

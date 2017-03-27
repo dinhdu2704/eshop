@@ -9,7 +9,8 @@ use DB;
 use App\User;
 use App\CommentBlog;
 use App\CommentProduct;
-
+use App\Customer;
+use App\CustomOrder;
 class userController extends Controller
 {
     public function listUser(){
@@ -113,17 +114,40 @@ class userController extends Controller
     public function getDelete($id)
     {
     	$user= User::find($id);
-    	$commentBlog=CommentBlog::where('idUser',$id)->get();
-    	$commentProduct=CommentProduct::where('idUser',$id)->get();
-    	if(count($commentProduct)==0 && count($commentBlog)==0){
+    	$commentBlog=CommentBlog::where('idUser',$id);
+    	$commentProduct=CommentProduct::where('idUser',$id);
+        //lấy customer có idUser= id
+        $customer = Customer::where('idUser',$id)->select('id')->get();
+        echo "idUser: ".$id."<br>";
+        foreach ($customer as $cus){
+            //lấy các customOrder có IdCustom = id trong custom
+            $CustomOrder= CustomOrder::where('idCustom',$cus->id)->select('id')->get();
+            foreach ($CustomOrder as $cusorder)
+            {
+                CustomOrder::where('id',$cusorder->id)->delete();
+            }
+            Customer::where('id',$cus->id)->delete();
+        }
+        //đếm số lượng commentProduct và commentBlog để xóa
+    	if(count($commentProduct)>0 && count($commentBlog)>0){
+            $commentProduct->delete();
+            $commentBlog->delete();
     		$user->delete();
-    		return redirect('admin/user/list')->with('thongbao','Đã xóa thành công');
     	}
-    	else
-    	{
-    		return redirect('admin/user/list')->with('error','Phải xóa cmt của User trước');
-    	}
-
+        else if(count($commentBlog)>0 && count($commentProduct)==0)
+        {
+            $commentBlog->delete();
+            $user->delete();
+        }
+        else if(count($commentProduct) >0 && count($commentBlog)==0)
+        {
+            $commentProduct->delete();
+            $user->delete();
+        }
+        else{
+            $user->delete();
+        }
+        return redirect('admin/user/list')->with('thongbao','Đã xóa thành công');
     }
 
     // login

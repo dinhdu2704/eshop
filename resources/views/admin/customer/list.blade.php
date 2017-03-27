@@ -59,7 +59,7 @@
                                         <td>{{ $cus->phone }}</td>
                                         <td>{{ $cus->address }}</td>
                                         <td>{{ $cus->message }}</td>
-                                        <td>{{ number_format($cus->subtotal) }}$</td>
+                                        <td>{{ $cus->subtotal }}$</td>
                                         <td>{{ Carbon\Carbon::createFromTimestamp(strtotime($cus->created_at))->diffForHumans() }}</td>
                                         <td>
                                             @if ($cus->status==0)
