@@ -9,6 +9,7 @@ use App\Category;
 use App\SubCategory;
 use App\Brand;
 use App\CommentProduct;
+use App\CustomOrder;
 class productController extends Controller
 {
     public function listProduct(){
@@ -256,6 +257,10 @@ class productController extends Controller
     public function getDelete($id){
         $product = Product::find($id);
         $comPro= CommentProduct::where('idPro',$id)->get();
+        $CusOrder= CustomOrder::where('idPro',$id);
+        if(count($CusOrder)>0){
+            $CusOrder->delete();
+        }
         if(count($comPro)==0)
         {
             if($product->hinh!='' || $product->hinh2!='' || $product->hinh3!='')
@@ -273,8 +278,7 @@ class productController extends Controller
                     unlink('upload/product/'.$product->hinh3);
                 }
             }
-            $product->delete();
-            return redirect('admin/product/list')->with('thongbao','Xóa sản phẩm thành công');
+            
         }
         else
         {
@@ -294,9 +298,11 @@ class productController extends Controller
                     unlink('upload/product/'.$product->hinh3);
                 }
             }
-            $product->delete();
-            return redirect('admin/product/list')->with('error','Xóa sản phẩm thành công');
+           
         }
+
+        $product->delete();
+        return redirect('admin/product/list')->with('error','Xóa sản phẩm thành công');
 
     }
 

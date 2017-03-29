@@ -39,6 +39,7 @@
                                         <th>Brand</th>
                                         <th>Type</th>
                                         <th>Description</th>
+                                        <th>View</th>
                                         <th>Hot</th>
                                         <th>Quantity</th>
                                         <th></th>
@@ -62,6 +63,7 @@
                                         <td>{{ $pro->brand->ten }}</td>
                                         <td>{{ $pro->subcate->ten }}</td>
                                         <td>{!! $pro->tomtat !!}</td>
+                                        <td>{!! $pro->soluotxem !!}</td>
                                         <td>
                                             @if ($pro->noibat==1)
                                                 {{ "Có" }}

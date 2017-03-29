@@ -215,7 +215,14 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
     //charts and thống kê
     Route::group(['prefix' => 'chart'], function() {
         Route::get('list.html','admin\chartController@chart');
-        Route::get('calculator.html','admin\chartController@calculator');
+        Route::get('day.html','admin\chartController@day');
+        Route::get('week.html','admin\chartController@week');
+        Route::get('month.html','admin\chartController@month');
+        Route::get('year.html','admin\chartController@year');
+        //test chart
+        Route::get('test','admin\chartController@testchart');
+        // ajax thống kê
+        Route::post('day.html','admin\chartController@postday');
     });
 });
 
@@ -258,7 +265,10 @@ Route::get('logout.html','PagesController@logout');
 // blog
 Route::get('blog.html','PagesController@blog');
 // blog detail
+
 Route::get('blog-detail/{tenkodau}-{id}.html','PagesController@blog_detail')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+
+
 Route::get('contact.html', function() {
     return view('pages.contact');
 });

@@ -172,13 +172,7 @@ class userController extends Controller
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
-            if(Auth::User()->quyen!=2 && Auth::User()->quyen!=1)
-            {
-                return redirect('admin/login')->with('error','Bạn không đủ quyền truy cập!!');
-            }
-            else{
-                return redirect('admin/index');
-            }
+            return redirect('admin/index');
         }
         else{
             return redirect('admin/login')->with('error','Sai Email hoặc Password!!');

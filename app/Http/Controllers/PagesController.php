@@ -21,6 +21,7 @@ use App\CustomOrder;
 use DB;
 use Mail;
 use Cart;
+use Session;
 use Illuminate\Support\Facades\Auth;
 class PagesController extends Controller
 {
@@ -42,6 +43,7 @@ class PagesController extends Controller
 	}
     function home(){
     	return view('layouts.container');
+
     }
     // product
     function product(){
@@ -54,6 +56,16 @@ class PagesController extends Controller
         
     	if(count($procheck)!=0)
     	{
+            // đếm lượt xem
+            $view=$procheck->soluotxem;
+            if(!Session::has('idProduct'.$id))
+            {
+                $view++;
+                $procheck->soluotxem=$view;
+                $procheck->save();
+                Session::put('idProduct'.$id,$id);
+            }
+            
             //lấy cùng tag 
             $brand2=Brand::where('id',$procheck->idBrand)->select('id')->first();
             $proBrand=Product::where('idBrand',$brand2->id)->where('id','!=',$id)->take(4)->get();
@@ -207,9 +219,20 @@ class PagesController extends Controller
     }
 
     // blod detail
-    function blog_detail($tenkodau,$id){
+    function blog_detail($tenkodau,$id, Request $request){
         $blog=Blog::where('tieudekodau',$tenkodau)->where('id',$id)->first();
-       
+        
+        // đếm lượt xem
+        $view=$blog->soluotxem;
+        
+        if(!Session::has('idBlog'.$id))
+        {
+            $view++;
+            $blog->soluotxem=$view;
+            $blog->save();
+            Session::put('idBlog'.$id, $id);
+        }
+
         $prev=Blog::where('id','>',$blog->id)->min('id');
         $next= Blog::where('id','<',$blog->id)->max('id');
         $blogprev= Blog::where('id',$prev)->first();

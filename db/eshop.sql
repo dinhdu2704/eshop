@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 17, 2017 lúc 10:40 SA
+-- Thời gian đã tạo: Th3 29, 2017 lúc 07:13 CH
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 5.6.30
 
@@ -74,8 +74,8 @@ INSERT INTO `blog` (`id`, `idUser`, `tieude`, `tieudekodau`, `tomtat`, `noidung`
 (20, 11, 'Girls Pink T Shirt arrived in store 3', 'girls-pink-t-shirt-arrived-in-store-3', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'vBWB_blog-one.jpg', 1, 0, '2017-03-16 02:41:35', '2017-03-16 02:41:35'),
 (21, 11, 'Girls Pink T Shirt arrived in store 4', 'girls-pink-t-shirt-arrived-in-store-4', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'wmpA_blog-two.jpg', 1, 0, '2017-03-16 02:42:18', '2017-03-16 02:42:18'),
 (22, 11, 'Girls Pink T Shirt arrived in store 5', 'girls-pink-t-shirt-arrived-in-store-5', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'HpH1_blog-three.jpg', 1, 0, '2017-03-16 02:42:35', '2017-03-16 02:42:35'),
-(23, 11, 'Girls Pink T Shirt arrived in store 6', 'girls-pink-t-shirt-arrived-in-store-6', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'm3ZA_blog-one.jpg', 0, 0, '2017-03-16 02:42:53', '2017-03-16 02:42:53'),
-(24, 11, 'Girls Pink T Shirt arrived in store 7', 'girls-pink-t-shirt-arrived-in-store-7', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'eEAz_blog-three.jpg', 0, 0, '2017-03-16 02:43:17', '2017-03-16 02:43:17');
+(23, 11, 'Girls Pink T Shirt arrived in store 6', 'girls-pink-t-shirt-arrived-in-store-6', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'm3ZA_blog-one.jpg', 0, 4, '2017-03-16 02:42:53', '2017-03-29 11:57:05'),
+(24, 11, 'Girls Pink T Shirt arrived in store 7', 'girls-pink-t-shirt-arrived-in-store-7', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', 'eEAz_blog-three.jpg', 0, 67, '2017-03-16 02:43:17', '2017-03-29 16:52:41');
 
 -- --------------------------------------------------------
 
@@ -157,8 +157,6 @@ CREATE TABLE `comment_blog` (
 
 INSERT INTO `comment_blog` (`id`, `idUser`, `idBlog`, `ten`, `email`, `noidung`, `created_at`, `updated_at`) VALUES
 (18, 11, 21, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:33', '2017-03-16 10:05:37'),
-(19, 12, 23, '{\"name\":\"kaideptrai1\"}', '{\"email\":\"kai1@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:43', '2017-03-16 05:31:43'),
-(20, 12, 21, '{\"name\":\"kaideptrai1\"}', '{\"email\":\"kai1@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:31:50', '2017-03-16 05:31:50'),
 (21, 11, 23, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:32:12', '2017-03-16 05:32:12'),
 (22, 11, 23, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp; Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>', '2017-03-16 05:32:31', '2017-03-16 05:32:31'),
 (23, 11, 23, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'bài viết hay quá', '2017-03-16 06:14:24', '2017-03-16 06:14:24'),
@@ -194,6 +192,66 @@ INSERT INTO `comment_product` (`id`, `idUser`, `idPro`, `ten`, `email`, `noidung
 (3, 11, 19, '{\"name\":\"\\u0110\\u1ed7 \\u0110\\u00ecnh D\\u1ef1\"}', '{\"email\":\"kaideptrai1102@gmail.com\"}', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', '2017-03-16 10:16:17', '2017-03-16 10:16:17'),
 (4, 11, 31, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'bài viết này thật sự rất hay', '2017-03-16 10:28:10', '2017-03-16 10:28:10'),
 (5, 11, 26, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', 'Mình muốn đặt chiếc áo này', '2017-03-16 10:35:40', '2017-03-16 10:35:40');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `idUser` int(10) UNSIGNED DEFAULT NULL,
+  `company` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtotal` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `customer`
+--
+
+INSERT INTO `customer` (`id`, `idUser`, `company`, `address`, `message`, `title`, `phone`, `subtotal`, `status`, `created_at`, `updated_at`) VALUES
+(9, 11, 'SOmething', 'Đông Anh HN', 'Số nhà 69, khu 5, thụy lôi, thụy lâm, ĐA, Hà Nội', 'Something', '09720605171', '374.00', 0, '2017-03-21 15:38:21', '2017-03-21 15:49:00'),
+(10, 19, 'Chưa có', 'Nhổn, ĐhCN', 'đại học CN HN, nhổn', 'Chưa có', '0123456789', '256.00', 0, '2017-03-21 15:58:28', '2017-03-21 15:58:28'),
+(11, 35, '', 'muahang3', 'muahang3', '', '123456789', '139.00', 0, '2017-03-27 16:32:30', '2017-03-27 16:32:30'),
+(12, 36, '', 'muahang4', 'muahang4', '', '124365787', '1,350.00', 0, '2017-03-27 17:17:21', '2017-03-27 17:17:21');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `custom_order`
+--
+
+CREATE TABLE `custom_order` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `idCustom` int(10) UNSIGNED DEFAULT NULL,
+  `idPro` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `total` double(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `custom_order`
+--
+
+INSERT INTO `custom_order` (`id`, `idCustom`, `idPro`, `qty`, `price`, `total`, `created_at`, `updated_at`) VALUES
+(6, 9, 31, 2, 27.00, 54.00, '2017-03-21 15:38:21', '2017-03-21 15:38:21'),
+(7, 9, 26, 5, 64.00, 320.00, '2017-03-21 15:38:21', '2017-03-21 15:38:21'),
+(9, 10, 9, 1, 34.00, 34.00, '2017-03-21 15:58:28', '2017-03-21 15:58:28'),
+(10, 10, 17, 1, 29.00, 29.00, '2017-03-21 15:58:28', '2017-03-21 15:58:28'),
+(11, 11, 27, 1, 27.00, 27.00, '2017-03-27 16:32:30', '2017-03-27 16:32:30'),
+(12, 11, 30, 2, 56.00, 112.00, '2017-03-27 16:32:30', '2017-03-27 16:32:30'),
+(13, 12, 27, 50, 27.00, 1350.00, '2017-03-27 17:17:21', '2017-03-27 17:17:21');
 
 -- --------------------------------------------------------
 
@@ -248,7 +306,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (43, '2017_03_08_101809_sub_foot_category', 1),
 (44, '2017_03_08_111657_comment_blog', 1),
 (45, '2017_03_08_112018_advertising', 1),
-(46, '2017_03_08_112934_comment_product', 1);
+(46, '2017_03_08_112934_comment_product', 1),
+(58, '2017_03_20_225426_customer', 2),
+(59, '2017_03_20_225505_custom_order', 2);
 
 -- --------------------------------------------------------
 
@@ -292,7 +352,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `idSubCate`, `idBrand`, `ten`, `tenkodau`, `tomtat`, `noidung`, `hinh`, `hinh2`, `hinh3`, `gia`, `soluong`, `noibat`, `soluotxem`, `created_at`, `updated_at`) VALUES
-(7, 18, 7, 'Easy Polo Black Edition', 'easy-polo-black-edition', 'Easy Polo Black Edition', '<p>Easy Polo Black Edition</p>', 'k7Sw_product1.jpg', '', '', 56, 11, 1, 0, '2017-03-12 03:55:53', '2017-03-12 03:55:53'),
+(7, 18, 7, 'Easy Polo Black Edition', 'easy-polo-black-edition', 'Easy Polo Black Edition', '<p>Easy Polo Black Edition</p>', 'IlV9_product1.jpg', 'sxvs_product3.jpg', '3Vvh_product5.jpg', 56, 11, 1, 0, '2017-03-12 03:55:53', '2017-03-27 16:15:51'),
 (8, 23, 3, 'Easy Polo Black Edition 3', 'easy-polo-black-edition-3', 'Easy Polo Black Edition', '<p>Easy Polo Black Edition</p>', 'GPF4_product2.jpg', '8h5t_product3.jpg', 'IQfB_product4.jpg', 56, 13, 1, 0, '2017-03-12 05:44:35', '2017-03-12 06:31:32'),
 (9, 31, 7, 'Easy Polo Black Edition 4', 'easy-polo-black-edition-4', 'Easy Polo Black Edition 4', '<p>Easy Polo Black Edition 4</p>', '9PyU_product3.jpg', '7KLJ_product4.jpg', 'TNjE_product1.jpg', 34, 1, 0, 0, '2017-03-12 07:00:42', '2017-03-12 07:00:42'),
 (10, 32, 5, 'Easy Polo Black Edition 5.2', 'easy-polo-black-edition-52', 'Easy Polo Black Edition 5', '<p>Easy Polo Black Edition 5</p>', 'Nv1w_product4.jpg', 'SikL_product5.jpg', 'Krb5_product6.jpg', 27, 32, 0, 0, '2017-03-12 07:01:45', '2017-03-12 07:20:01'),
@@ -304,14 +364,14 @@ INSERT INTO `product` (`id`, `idSubCate`, `idBrand`, `ten`, `tenkodau`, `tomtat`
 (19, 17, 3, 'Sportswear Hot 4', 'sportswear-hot-4', 'Sportswear Hot 4', '<p>Sportswear Hot 4</p>', 'WTjx_product5.jpg', 'b0VN_product4.jpg', 'gene_product3.jpg', 37, 42, 1, 0, '2017-03-13 02:21:41', '2017-03-13 02:21:41'),
 (20, 17, 3, 'Sportswear Hot 5', 'sportswear-hot-5', 'Sportswear Hot 5', '<p>Sportswear Hot 5</p>', 'nqkp_product4.jpg', 'd6w8_product3.jpg', 'wJXy_product2.jpg', 27, 64, 1, 0, '2017-03-13 02:22:23', '2017-03-13 02:22:23'),
 (21, 24, 7, 'Product Mens Hot 3', 'product-mens-hot-3', 'Product Mens Hot 3', '<p>Product Mens Hot 3</p>', 'BGja_product3.jpg', 'zvnk_product2.jpg', 'UkG8_product1.jpg', 27, 13, 1, 0, '2017-03-13 02:24:32', '2017-03-13 02:24:32'),
-(22, 24, 3, 'Product Mens Hot 4', 'product-mens-hot-4', 'Product Mens Hot 4', '<p>Product Mens Hot 4</p>', 't6hg_product2.jpg', 'lgw7_product1.jpg', 'bYuV_product6.jpg', 39, 43, 1, 0, '2017-03-13 02:25:05', '2017-03-13 02:25:05'),
+(22, 24, 3, 'Product Mens Hot 4', 'product-mens-hot-4', 'Product Mens Hot 4', '<p>Product Mens Hot 4</p>', 't6hg_product2.jpg', 'lgw7_product1.jpg', 'bYuV_product6.jpg', 39, 43, 1, 1, '2017-03-13 02:25:05', '2017-03-29 15:04:57'),
 (24, 30, 5, 'Womens Product Recomemded', 'womens-product-recomemded', 'Womens Product Recomemded', '<p>Womens Product Recomemded</p>', '7ijm_product4.jpg', 'uUWp_product5.jpg', 'NVnf_product6.jpg', 37, 27, 1, 0, '2017-03-13 02:31:51', '2017-03-13 02:31:51'),
-(25, 31, 7, 'Womens Product Recomemded 2.1', 'womens-product-recomemded-21', 'Womens Product Recomemded 2.1', '<p>Womens Product Recomemded 2</p>', 'pefH_product5.jpg', 'xYxP_product6.jpg', 'g6Pc_product4.jpg', 27, 98, 0, 0, '2017-03-13 02:32:18', '2017-03-13 02:39:52'),
-(26, 31, 7, 'Womens Product Recomemded 3', 'womens-product-recomemded-3', 'Womens Product Recomemded 3', '<p>Womens Product Recomemded 3</p>', 'Omtz_girl3.jpg', 'kkzh_product5.jpg', '7xis_product3.jpg', 64, 36, 1, 0, '2017-03-13 02:33:16', '2017-03-13 02:33:16'),
+(25, 31, 7, 'Womens Product Recomemded 2.1', 'womens-product-recomemded-21', 'Womens Product Recomemded 2.1', '<p>Womens Product Recomemded 2</p>', 'pefH_product5.jpg', 'xYxP_product6.jpg', 'g6Pc_product4.jpg', 27, 98, 0, 1, '2017-03-13 02:32:18', '2017-03-29 11:51:14'),
+(26, 31, 7, 'Womens Product Recomemded 3', 'womens-product-recomemded-3', 'Womens Product Recomemded 3', '<p>Womens Product Recomemded 3</p>', 'Omtz_girl3.jpg', 'kkzh_product5.jpg', '7xis_product3.jpg', 64, 36, 1, 1, '2017-03-13 02:33:16', '2017-03-29 11:51:11'),
 (27, 22, 7, 'Mens Product 3', 'mens-product-3', 'Mens Product 3', '<p>Mens Product 3</p>', 'yPeC_product2.jpg', 'Njqw_gallery2.jpg', 'f1n2_girl1.jpg', 27, 16, 0, 0, '2017-03-13 02:34:31', '2017-03-13 02:34:31'),
-(29, 15, 1, 'Sportswear Product 1.1', 'sportswear-product-11', 'Sportswear Product 1.1', '<p>Sportswear Product 1.1</p>', 'Zcoh_product11.jpg', 'Ofvb_product9.jpg', 'Lr8d_product10.jpg', 64, 45, 0, 0, '2017-03-13 02:38:09', '2017-03-13 02:38:09'),
+(29, 15, 1, 'Sportswear Product 1.1', 'sportswear-product-11', 'Sportswear Product 1.1', '<p>Sportswear Product 1.1</p>', 'Zcoh_product11.jpg', 'Ofvb_product9.jpg', 'Lr8d_product10.jpg', 64, 45, 0, 1, '2017-03-13 02:38:09', '2017-03-29 15:05:45'),
 (30, 31, 4, 'Mens Product 1.1', 'mens-product-11', 'Mens Product 1.1', '<p>Mens Product 1.1</p>', 'fCBe_product8.jpg', 'emHj_product7.jpg', 'RX9X_product9.jpg', 56, 75, 0, 0, '2017-03-13 02:38:52', '2017-03-13 02:38:52'),
-(31, 32, 4, 'Womens Product 4', 'womens-product-4', 'Womens Product 4', '<p>Womens Product 4</p>', 'ECXU_product9.jpg', 'KTb6_product8.jpg', 'zM6y_product7.jpg', 27, 27, 1, 0, '2017-03-13 02:40:45', '2017-03-13 02:40:45');
+(31, 32, 4, 'Womens Product 4', 'womens-product-4', 'Womens Product 4', '<p>Womens Product 4</p>', 'ECXU_product9.jpg', 'KTb6_product8.jpg', 'zM6y_product7.jpg', 27, 27, 1, 3, '2017-03-13 02:40:45', '2017-03-29 16:54:57');
 
 -- --------------------------------------------------------
 
@@ -451,12 +511,31 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `quyen`, `remember_token
 (7, 'Use7@gmail.com', 'Use7@gmail.com', 'Use7@gmail.com', 0, NULL, NULL, NULL),
 (9, 'Use9@gmail.com', 'Use9@gmail.com', 'Use9@gmail.com', 0, NULL, NULL, NULL),
 (10, 'Use911@gmail.com', 'Use911@gmail.com', 'Use911@gmail.com', 1, NULL, NULL, NULL),
-(11, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', '$2y$10$k.k6WFpaAdZH0wHq8jGfHO3UJi1rQ/Hn7tsXdeeDwGkjGrdtqrV2i', 2, 'gnmN9kJ6oBC1bGZW9fFyjlXXjs8P6RWbw5q2q21dnFNOcDxLiYP5zV5osAOI', NULL, '2017-03-16 10:02:25'),
-(12, 'kaideptrai1', 'kai1@gmail.com', '$2y$10$lzpWc8mEiPhBqbxQLnN3a.XliP1QKhpRDA3il8phCUPQkvqKp2dru', 0, NULL, '2017-03-10 04:13:56', '2017-03-10 04:13:56'),
+(11, 'Đỗ Đình Dự', 'kaideptrai1102@gmail.com', '$2y$10$k.k6WFpaAdZH0wHq8jGfHO3UJi1rQ/Hn7tsXdeeDwGkjGrdtqrV2i', 2, 'DKxtxJSY4RKcPJuoYoPN9PKESUkz6p6AaJrjd1XDYgHH8jCOhCf77HXLTxz2', NULL, '2017-03-16 10:02:25'),
 (13, 'đỗ đình dự 2', 'kaihandsome@gmail.com', '$2y$10$VRCq3Bev6iL1.BhWNIeGHOF.SsjwKVptocfcCtxG0oMDb1GiKvLAe', 0, NULL, '2017-03-16 01:29:45', '2017-03-16 01:35:06'),
 (14, 'đỗ đình dự 3', 'dinhdu3@gmail.com', '$2y$10$vGzwm/Fl6ogGvrVVWUtXDeBU.0tjL46L2rOcAlqVF5.xBysL6Euny', 0, 'DflMyzQUI5CxUoHUYHX2VAPAFbAOoI0DeGnVkiPAydYuRnZKZSeNozfa2xNN', '2017-03-16 01:31:42', '2017-03-16 01:34:48'),
 (15, 'đỗ đình dự 4', 'dinhdu4@gmail.com', '$2y$10$.dseuk5.a1XmI4sLMspMWeJDldN3Udg3S2bGpd/NSx5Ik5mapb.t2', 0, NULL, '2017-03-16 01:36:12', '2017-03-16 01:36:12'),
-(16, 'đình dự 6', 'dinhdu5@gmail.com', '$2y$10$1JBcYgTg69hMnqg7ZJoGmex309oOyCIJU8nIAi2OmwXbKXd1Pmbw2', 0, 'UHNtAIWIBbeYRyyhXRGQRyO7VLY3a0doq24RA8PK2nEF3FPzk7vB1ruPrsbc', '2017-03-16 01:37:21', '2017-03-16 02:15:08');
+(16, 'đình dự 6', 'dinhdu5@gmail.com', '$2y$10$1JBcYgTg69hMnqg7ZJoGmex309oOyCIJU8nIAi2OmwXbKXd1Pmbw2', 0, 'UHNtAIWIBbeYRyyhXRGQRyO7VLY3a0doq24RA8PK2nEF3FPzk7vB1ruPrsbc', '2017-03-16 01:37:21', '2017-03-16 02:15:08'),
+(17, 'kai đẹp trai', 'testregister@gmail.com', '$2y$10$APekxRDN/xXTDm8oBpdGK.e4IiD6PoJYoWH2tIbE3a0hqi4FT08Ce', 0, 'QHU2bObE8g8Ch3KhRvU7tHbSkyWlxeYj7y8Cy9aVIJd4IFl98KGzq5TawHET', '2017-03-19 17:12:55', '2017-03-19 17:12:55'),
+(18, 'kai handsome', 'testregister2@gmail.com', '$2y$10$s9SwXJfStQAMYeq90FhEueDj3kOQZQmg33no.eu0NLafmPYW2oiOu', 0, NULL, '2017-03-19 17:17:34', '2017-03-19 17:17:34'),
+(19, 'Đình Dự', 'dinhdu1102@gmail.com', '$2y$10$nUiFUo/e/TZW2z/GTEpQcOEqyzGyz/8hi1TmwUsKwoAWmj0x4j2cu', 0, 'FJOhpLIIfrwpZgf5R1unmSlpeAvVgTzSUIpAJvn83ZVNo930tMT7GNXf2vB2', '2017-03-20 15:18:02', '2017-03-20 15:18:02'),
+(20, 'dinhdu', 'Uvi6CJl@gmail.com', '$2y$10$N5Xblq9i6npWmMotem9Pc.kucc2u5c2pq4/GFJcGmIQH4I3cP6xeO', 0, NULL, NULL, NULL),
+(21, 'dinhdu1', 'sHtDM@gmail.com', '$2y$10$4Z1xiakcV3tP.zG67L0qv.dSjVLfLvLv4YAdimGfcGOEtpe.WxUzi', 0, NULL, NULL, NULL),
+(22, 'dinhdu2', 'hvU824rmIj@gmail.com', '$2y$10$YVajeMttNeIndA54iixUZ..ml7apshbZq4uhUFdah6PMplQuOgnPe', 0, NULL, NULL, NULL),
+(23, 'dinhdu', 'dCEEoDX@gmail.com', '$2y$10$K4ajZ6Dt0QxfIdaAx8iGbOq7BKHxv9kSOpe.U3bAJC6Tp6to3zKe.', 0, NULL, NULL, NULL),
+(24, 'dinhdu1', '6aUPG@gmail.com', '$2y$10$g1xmfBE0EYGQHrcXcuPEHeYGJvtdLap3Ph1bbl53m7y55EB/CHWf2', 0, NULL, NULL, NULL),
+(25, 'dinhdu2', 'ielLHGOJwT@gmail.com', '$2y$10$iSaOrR0ajxbFAXETIjI0KedEg6vtxMkstwT9Wfqz5Q1bPEJGDmVqa', 0, NULL, NULL, NULL),
+(26, 'dinhdu', 'udgvVE1@gmail.com', '$2y$10$M3FD8EZfROXxVZAid8G.CO6WxWDRpsy2cKeaBXhx.to6kcSfZftR.', 0, NULL, NULL, NULL),
+(27, 'dinhdu1', '9m1PL@gmail.com', '$2y$10$FbAB3pFjdQ.CPDSVwaGRoOtAC4.CGk4piG0RlQR88UAPfI/0CTSB.', 0, NULL, NULL, NULL),
+(28, 'dinhdu2', 'wxG9g2PEfe@gmail.com', '$2y$10$a2S9ns4WITRZx.jI25w0Nu/5.wQT/TbJka9xwabKsJoKUG7I2B7Ye', 0, NULL, NULL, NULL),
+(29, 'dinhdu', 'xVKhemU@gmail.com', '$2y$10$cz97r5mVcUidH9WB7PJhrOwrLxwAeOtr0z1a8tROvbYgRRbScIWBu', 0, NULL, NULL, NULL),
+(30, 'dinhdu1', 'Gr8Ky@gmail.com', '$2y$10$/IMe/HhTed7PwufzrsBmxurUIb.xPi2g/TDEKTwhsTzg4YK6hw1iG', 0, NULL, NULL, NULL),
+(31, 'dinhdu2', 'C365lxabz5@gmail.com', '$2y$10$PFyvkuQsuB2CaDG2ydFvMeUYogiq.N3cOrmG427IZ45leAPpL4ubW', 0, NULL, NULL, NULL),
+(32, 'dinhdu', 'Sq9sPjl@gmail.com', '$2y$10$T9UBNlbo4C8U6FDTlhLyT.g7wCGiMoEQxw0zLKFkB.2VaA2GJ1asi', 0, NULL, NULL, NULL),
+(33, 'dinhdu1', 'G22jK@gmail.com', '$2y$10$JFXsb0EfleH9nJkmJ54rOe9MFP2lfMZrMWGNLe1i6Lzs/J/kptJHC', 0, NULL, NULL, NULL),
+(34, 'dinhdu2', 'gS0UbIn8WP@gmail.com', '$2y$10$nvGnntOsBZxN7IyGLdVJFeXmK.IL9jfTS8Y.E5x7Vhdatd44MduoC', 0, NULL, NULL, NULL),
+(35, 'muahang3', 'muahang3@gmail.com', '$2y$10$4Z3xvBiTXyMBl4.F/Jt5oOcoSRpqxb57LtzsUpKpTg7AXkbXKS27W', 0, 'h7qQjiLdB3Kw6qakj3nuHmDLANqCGcBlpIcmZTwAzZzBmDiAeuLkzGhZ62NU', '2017-03-27 16:32:01', '2017-03-27 16:32:01'),
+(36, 'muahang4', 'muahang4@gmail.com', '$2y$10$5Ii4jo4IYIUfSLWiewpPOu21n/XH0mYAFfZz.p9WwJo68y5OO/TZG', 0, 'YDTij1Th92uqcBj4UaT8rOAGThgPc96hVZk2SFBVyJlcfwBXgljn7YTOOVZh', '2017-03-27 17:07:40', '2017-03-27 17:07:40');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -502,6 +581,20 @@ ALTER TABLE `comment_product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `comment_product_iduser_foreign` (`idUser`),
   ADD KEY `comment_product_idpro_foreign` (`idPro`);
+
+--
+-- Chỉ mục cho bảng `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_iduser_foreign` (`idUser`);
+
+--
+-- Chỉ mục cho bảng `custom_order`
+--
+ALTER TABLE `custom_order`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `custom_order_idcustom_foreign` (`idCustom`);
 
 --
 -- Chỉ mục cho bảng `foot_category`
@@ -592,6 +685,16 @@ ALTER TABLE `comment_blog`
 ALTER TABLE `comment_product`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT cho bảng `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT cho bảng `custom_order`
+--
+ALTER TABLE `custom_order`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
 -- AUTO_INCREMENT cho bảng `foot_category`
 --
 ALTER TABLE `foot_category`
@@ -600,7 +703,7 @@ ALTER TABLE `foot_category`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
@@ -625,7 +728,7 @@ ALTER TABLE `sub_foot_category`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
@@ -649,6 +752,18 @@ ALTER TABLE `comment_blog`
 ALTER TABLE `comment_product`
   ADD CONSTRAINT `comment_product_idpro_foreign` FOREIGN KEY (`idPro`) REFERENCES `product` (`id`),
   ADD CONSTRAINT `comment_product_iduser_foreign` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
+
+--
+-- Các ràng buộc cho bảng `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_iduser_foreign` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
+
+--
+-- Các ràng buộc cho bảng `custom_order`
+--
+ALTER TABLE `custom_order`
+  ADD CONSTRAINT `custom_order_idcustom_foreign` FOREIGN KEY (`idCustom`) REFERENCES `customer` (`id`);
 
 --
 -- Các ràng buộc cho bảng `product`

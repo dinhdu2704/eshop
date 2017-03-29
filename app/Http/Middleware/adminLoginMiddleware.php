@@ -17,11 +17,13 @@ class AdminLoginMiddleware
     {
         if(Auth::User())
         {
-            //$user=Auth::User();
-            // if($user->quyen==1 || $user->quyen==2)
-            // {
+            if(Auth::User()->quyen==1 || Auth::User()->quyen==2)
+            {
                 return $next($request);
-            // }
+            }
+            else{
+                return redirect('admin/login')->with('error','Bạn không có quyền truy cập!!');
+            }
         }
         else
         {

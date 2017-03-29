@@ -143,7 +143,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="admin/comment-product/list">Comment Product<span class="fa arrow"></a>
+                                    <a href="admin/comment-product/list">Comment Product<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="admin/comment-product/list">List Comment Product</a>
@@ -173,7 +173,21 @@
                             <a href="admin/chart/chart.html"><i class="fa fa-bar-chart-o fa-fw"></i>Chart<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/chart/calculator.html"><i class="fa fa-calendar fa-fw"></i>Thống kê chung</a>
+                                    <a href=""><i class="fa fa-calendar fa-fw"></i>Thống kê chung<span class="fa arrow"></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="admin/chart/day.html">Hôm nay</a>
+                                        </li>
+                                        <li>
+                                            <a href="admin/chart/week.html">Tuần này</a>
+                                        </li>
+                                        <li>
+                                            <a href="admin/chart/month.html">Tháng này</a>
+                                        </li>
+                                        <li>
+                                            <a href="admin/chart/year.html">Năm nay</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="admin/chart/list.html"><i class="fa fa-money fa-fw"></i>Charts</a>

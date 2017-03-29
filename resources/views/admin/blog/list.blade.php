@@ -36,6 +36,7 @@
                                         <th>Mô tả</th>
                                         <th>Người đăng</th>
                                         <th>Nổi bật</th>
+                                        <th>View</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -61,6 +62,7 @@
                                             @else {{ "Không" }}
                                             @endif
                                         </td>
+                                        <td>{{ $bl->soluotxem }}</td>
                                         <td class="text-center" width="10%">
                                             <a href="admin/blog/edit/{{ $bl->id }}" class="font-20 text-success "><span class="fa fa-pencil-square-o"></span></a>&nbsp;&nbsp;
                                             <a onclick="return window.confirm('Bạn muốn xóa chứ?')" href="admin/blog/delete/{{ $bl->id }}" class="font-20 text-danger"><span class="fa fa-times"></span></a>

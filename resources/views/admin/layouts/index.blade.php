@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="admin_asset/images/icon.png">
     <title>Eshop - Admin</title>
     <base href=" {{ asset('') }}">
+    @yield('chart')
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
