@@ -54,15 +54,18 @@
 								<h2>{{ $procheck->ten }}</h2>
 								<p>Web ID: {{ $procheck->id }}</p>
 								<img src="images/product-details/rating.png" alt="" />
+								<form action="{{ url('buy-product/'.$procheck->tenkodau.'-'.$procheck->id.'.html') }}" method="post">
 								<span>
 									<span>USD: {{ $procheck->gia }}$</span>
 									<label>Quantity:</label>
-									<input type="text" value="1" name="number"/>
-									<button type="button" class="btn btn-fefault cart">
+									<input type="number" min="0" max="99" value="1" name="number"/>
+									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								</span>
+								</form>
 								<p><b>Availability: </b>
 									@if($procheck->soluong >10)
 										{{ "Còn hàng" }}

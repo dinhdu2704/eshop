@@ -259,6 +259,14 @@ Route::post('signup.html','PagesController@postSignup');
 //edit profile
 Route::get('profile.html','PagesController@getProfile');
 Route::post('profile.html','PagesController@postProfile');
+
+// myorder
+Route::get('myorder.html','PagesController@getOrder');
+Route::post('myorder.html','PagesController@postOrder');
+// order-detail
+Route::get('myorder/view-{id}.html','PagesController@getViewOrder')->where('id','[0-9a-zA-Z_-]+');
+// hủy đơn hàng
+Route::get('myorder/delete-{id}.html','PagesController@getDeleteOrder')->where('id','[0-9a-zA-Z_-]+');
 // logout
 Route::get('logout.html','PagesController@logout');
 
@@ -280,6 +288,8 @@ Route::post('product-detail/{tenkodau}-{id}.html','PagesController@commentProduc
 
 //buy
 Route::get('buy/{tenkodau}-{id}.html','PagesController@buy')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
+// buy product-detail
+Route::post('buy-product/{tenkodau}-{id}.html','PagesController@buyProduct')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );;
 // cart
 Route::get('cart.html','PagesController@cart')->where(array('tenkodau' => '[0-9a-zA-Z_-]+', 'id' => '[0-9]+') );
 // update cart

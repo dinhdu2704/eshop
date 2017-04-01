@@ -133,6 +133,10 @@ class PagesController extends Controller
 
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
+            $remember = $request->remember;
+            if (!empty($remember)){
+                Auth::login(Auth::User()->id,true);
+            }
             return redirect('home');
         }
         else{
@@ -205,6 +209,9 @@ class PagesController extends Controller
         $user->save();
         return redirect('profile.html')->with('thongbao','Edit Your Profile Successfully');
     }
+
+   
+
     function logout()
     {
         Auth::logout();
@@ -275,6 +282,14 @@ class PagesController extends Controller
     }
 
     //cart
+    function cart(){
+        $content= Cart::content();
+        $subtotal= Cart::subtotal();
+        $count= Cart::count();
+        //$vat= $subtotal*10/100; ,'vat'=>$vat
+        return view('pages.cart',['content'=>$content,'subtotal'=>$subtotal,'count'=>$count]);
+    }
+    //cart
     function buy($tenkodau,$id)
     {
         $product_buy=Product::where('id',$id)->first();
@@ -282,12 +297,16 @@ class PagesController extends Controller
         $content= Cart::content();
         return redirect('cart.html');
     }
-    function cart(){
-        $content= Cart::content();
-        $subtotal= Cart::subtotal();
-        $count= Cart::count();
-        //$vat= $subtotal*10/100; ,'vat'=>$vat
-        return view('pages.cart',['content'=>$content,'subtotal'=>$subtotal,'count'=>$count]);
+    //cart buy product-detail
+    function buyProduct($tenkodau,$id,Request $request)
+    {
+        if(isset($request->number))
+        {
+            $buyProduct= Product::where('id',$id)->first();
+            Cart::add(['id'=>$id,'name'=>$buyProduct->ten,'price'=>$buyProduct->gia,'qty'=>$request->number,'options'=>['img'=>$buyProduct->hinh]]);
+            $content=Cart::content();
+            return redirect('cart.html');
+        }
     }
    
     //delete product in cart
@@ -296,6 +315,7 @@ class PagesController extends Controller
         Cart::remove($id);
         return redirect('cart.html');
     }
+    //delete all cart
     function deleteAll(){
         Cart::destroy();
         return redirect('cart.html');
@@ -367,6 +387,77 @@ class PagesController extends Controller
         }
 
     }
+
+    function getOrder(){
+        if(!Auth::User())
+        {
+            return redirect('product.html');
+        }
+        else{
+
+            $idUser= Auth::User()->id;
+            //$infor= Customer::where('idUser',$idUser)->orderBy('id','desc')->first();
+            $bought = CustomOrder::whereHas('Customer', function ($query) {
+                $query->where('idUser',Auth::User()->id);
+            })->get();
+            //$sum= Customer::where('idUser',$idUser)->sum('subtotal');
+            return view('pages.my-order',['bought'=>$bought]);
+        }
+    }
+
+    function getViewOrder($id){
+        if(!Auth::User())
+        {
+            return redirect('cart.html');
+        }
+        else{
+            $CustomOrder=CustomOrder::find($id);
+            
+            if(count($CustomOrder)>0)
+            {
+                $idUser = $CustomOrder->customer->user->id;
+                if($idUser!=Auth::User()->id)
+                {
+                    return redirect('myorder.html');
+                }
+                else{
+                    return view('pages.view-order',['CustomOrder'=>$CustomOrder]);
+                }
+            }
+            else{
+                return redirect('myorder.html');
+            }
+        }
+    }
+
+    // delete order
+    function getDeleteOrder($id){
+        if(!Auth::User())
+        {
+            return redirect('cart.html');
+        }
+        else{
+            $CustomOrder=CustomOrder::find($id);
+            if(count($CustomOrder)>0)
+            {
+                $idUser = $CustomOrder->customer->user->id;
+                if($idUser!=Auth::User()->id)
+                {
+                    return redirect('myorder.html');
+                }
+                else{
+                    $CustomOrder->delete();
+                    return redirect('myorder.html')->with('success','Hủy đơn hàng thành công');
+                }
+            }
+            else{
+                return redirect('myorder.html');
+            }
+        }
+    }
+    
+    // end cart
+
     // contact
     function getContact(){
         return view('pages.contact');

@@ -38,7 +38,7 @@
 							<input type="email" name="email" placeholder="Email Address" />
 							<input type="password" placeholder="********" name="password" />
 							<span>
-								<input type="checkbox" class="checkbox"> 
+								<input type="checkbox" name="remember" id="remember" class="checkbox"> 
 								Keep me signed in
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>

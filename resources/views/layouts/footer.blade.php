@@ -105,8 +105,7 @@
 								<p>Get the most recent updates from <br />our site and be updated your self...</p>
 							</form>
 							<h2>Số lượt xem</h2>
-							<div align=center><a href='javascript:void(0)'><img src='http://www.counter12.com/img-8cYB9616xcDCbZ52-2.gif' border='0' alt='web counter free'></a><script type='text/javascript' src='http://www.counter12.com/ad.js?id=8cYB9616xcDCbZ52'></script></div>
-							
+							<div align=center><a href='javascript:void(0)'><img src='http://www.counter12.com/img-8cYB9616xcDCbZ52-2.gif' border='0' alt='counter view e-shop'></a><script type='text/javascript' src='http://www.counter12.com/ad.js?id=8cYB9616xcDCbZ52'></script></div>
 						</div>
 					</div>
 					

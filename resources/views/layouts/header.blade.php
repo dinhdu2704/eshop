@@ -62,9 +62,14 @@
 								
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="{{ url('cart.html') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="{{ url('cart.html') }}"><i class="fa fa-shopping-cart"></i> Cart @if (Cart::content())
+									({{ count(Cart::content()) }}) @endif</a></li>
 								@if(Auth::User())
-								<li><a href="{{ url('profile.html') }}"><i class="fa fa-user"></i>{{ Auth::User()->name }}</a>
+								<li><a href="javascript:void(0)" data-toggle="dropdown" ><i class="fa fa-user"></i>{{ Auth::User()->name }}</a>
+									<ul class="dropdown-menu">
+										<li><a style="line-height: 20px" href="{{ url('profile.html') }}">My Setting</a></li>
+										<li><a style="line-height: 20px;padding-bottom: 5px;" href="{{ url('myorder.html') }}">My Order</a></li>
+									</ul>
 								</li>
 								<li><a href="{{ url('logout.html') }}"><i class="fa fa-sign-out"></i>Log out</a></li> 
 								@else
