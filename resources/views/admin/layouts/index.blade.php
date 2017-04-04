@@ -59,14 +59,14 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="admin_asset/vendor/metisMenu/metisMenu.min.js"></script>
-    
+
     {{-- Ckeditor --}}
     <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
-    
+
     @yield('script')
     <!-- Custom Theme JavaScript -->
     <script src="admin_asset/dist/js/sb-admin-2.js"></script>
-    
+
 </body>
 
 </html>

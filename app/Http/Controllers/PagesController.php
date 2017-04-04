@@ -43,7 +43,6 @@ class PagesController extends Controller
 	}
     function home(){
     	return view('layouts.container');
-
     }
     // product
     function product(){
@@ -53,7 +52,7 @@ class PagesController extends Controller
     function product_detail($tenkodau,$id)
     {
     	$procheck=Product::where('id',$id)->where('tenkodau',$tenkodau)->first();
-        
+
     	if(count($procheck)!=0)
     	{
             // đếm lượt xem
@@ -65,8 +64,8 @@ class PagesController extends Controller
                 $procheck->save();
                 Session::put('idProduct'.$id,$id);
             }
-            
-            //lấy cùng tag 
+
+            //lấy cùng tag
             $brand2=Brand::where('id',$procheck->idBrand)->select('id')->first();
             $proBrand=Product::where('idBrand',$brand2->id)->where('id','!=',$id)->take(4)->get();
             //lấy cùng price
@@ -174,7 +173,7 @@ class PagesController extends Controller
         {
             return redirect('home')->with('success','Đăng ký thành công ^^');
         }
-        
+
     }
     function getProfile(){
         return view('pages.profile');
@@ -210,7 +209,7 @@ class PagesController extends Controller
         return redirect('profile.html')->with('thongbao','Edit Your Profile Successfully');
     }
 
-   
+
 
     function logout()
     {
@@ -228,10 +227,10 @@ class PagesController extends Controller
     // blod detail
     function blog_detail($tenkodau,$id, Request $request){
         $blog=Blog::where('tieudekodau',$tenkodau)->where('id',$id)->first();
-        
+
         // đếm lượt xem
         $view=$blog->soluotxem;
-        
+
         if(!Session::has('idBlog'.$id))
         {
             $view++;
@@ -267,7 +266,7 @@ class PagesController extends Controller
         $comment->noidung= $request->noidung;
         $comment->save();
         return redirect('blog-detail/'.$tenkodau.'-'.$id.'.html');
-    } 
+    }
     function commentProduct($tenkodau,$id,Request $request)
     {
         $user=Auth::User();
@@ -308,7 +307,7 @@ class PagesController extends Controller
             return redirect('cart.html');
         }
     }
-   
+
     //delete product in cart
     function delete($id)
     {
@@ -367,7 +366,7 @@ class PagesController extends Controller
             $customer->save();
 
             $customer2 = Customer::orderBy('id','desc')->select('id')->first();
-            
+
             foreach(Cart::content() as $row){
                 $order=new CustomOrder();
                 $order->idCustom= $customer2->id;
@@ -380,7 +379,7 @@ class PagesController extends Controller
             Cart::destroy();
             return redirect('checkout.html')->with('success','ok');
         }
-        
+
         else
         {
             return redirect('checkout.html')->with('thongbao','Mật khẩu bạn nhập chưa chính xác!');
@@ -412,7 +411,7 @@ class PagesController extends Controller
         }
         else{
             $CustomOrder=CustomOrder::find($id);
-            
+
             if(count($CustomOrder)>0)
             {
                 $idUser = $CustomOrder->customer->user->id;
@@ -455,7 +454,7 @@ class PagesController extends Controller
             }
         }
     }
-    
+
     // end cart
 
     // contact
@@ -469,7 +468,7 @@ class PagesController extends Controller
             if($request->price_range)
                 $priceArr=explode(',',$request->price_range);
                 $productArr = DB::table('product')->whereBetween('gia', array($priceArr[0], $priceArr[1]))->orderBy('gia','asc')->paginate(12);
-                foreach ($productArr as $prod) { 
+                foreach ($productArr as $prod) {
 
                     echo '<div class="col-sm-4 col-md-4">';
                         echo '<div class="product-image-wrapper">';
@@ -495,7 +494,7 @@ class PagesController extends Controller
                                    //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
                                    //          echo '<img src="images/home/sale.png" class="new" alt="" />
                                    // echo ' echo '@endif
-                                            
+
                                 echo '</div>';
                             echo '</div>';
                             echo '<div class="choose">';
@@ -506,7 +505,7 @@ class PagesController extends Controller
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
-                   
+
                 }
                     // echo "<div class='col-sm-12 col-md-12 text-center page-new'>";
                     //     echo $productArr->render();
@@ -522,7 +521,7 @@ class PagesController extends Controller
                 $priceArr=explode(',',$request->price_range);
                 $idBrand= $request->idBrand;
                 $productArr = DB::table('product')->where('idBrand',$idBrand)->whereBetween('gia', array($priceArr[0], $priceArr[1]))->orderBy('gia','asc')->paginate(12);
-                foreach ($productArr as $prod) { 
+                foreach ($productArr as $prod) {
                     echo '<div class="col-sm-4 col-md-4">';
                         echo '<div class="product-image-wrapper">';
                             echo '<div class="single-products">';
@@ -547,7 +546,7 @@ class PagesController extends Controller
                                    //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
                                    //          echo '<img src="images/home/sale.png" class="new" alt="" />
                                    // echo ' echo '@endif
-                                            
+
                                 echo '</div>';
                             echo '</div>';
                             echo '<div class="choose">';
@@ -559,7 +558,7 @@ class PagesController extends Controller
                         echo '</div>';
                     echo '</div>';
                 }
-            }   
+            }
         }
     }
     // ajax Category
@@ -574,7 +573,7 @@ class PagesController extends Controller
 
                 $productArr=DB::table('product')->where('idSubCate',$idSubCate)->whereBetween('gia',array($priceArr[0],$priceArr[1]))->orderBy('gia','asc')->paginate(12);
 
-                foreach ($productArr as $prod) { 
+                foreach ($productArr as $prod) {
                     echo '<div class="col-sm-4 col-md-4">';
                         echo '<div class="product-image-wrapper">';
                             echo '<div class="single-products">';
@@ -599,7 +598,7 @@ class PagesController extends Controller
                                    //  echo '@if($prod->soluong <=50 && $prod->noibat==0)
                                    //          echo '<img src="images/home/sale.png" class="new" alt="" />
                                    // echo ' echo '@endif
-                                            
+
                                 echo '</div>';
                             echo '</div>';
                             echo '<div class="choose">';

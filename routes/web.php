@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
 	//index
     Route::get('/','admin\indexController@index');
     Route::get('index','admin\indexController@index');
-    
+
     //user
     Route::group(['prefix' => 'user'], function()
     {
@@ -52,7 +52,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
 
     });
 
-    // sub category 
+    // sub category
     Route::group(['prefix' => 'sub-category'], function()
     {
         Route::get('list','admin\sub_cateController@listSubcate');
@@ -112,7 +112,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         //delete
         Route::get('delete/{id}','admin\slideController@getDelete');
     });
-   	
+
     // slide ads
     Route::group(['prefix' => 'slide-ads'], function()
     {
@@ -126,7 +126,7 @@ Route::group(['prefix' => 'admin','middleware'=>'adminLogin'], function() {
         //delete
         Route::get('delete/{id}','admin\adverController@getDelete');
     });
-   	
+
 
     // footer
     Route::group(['prefix' => 'footer'], function()

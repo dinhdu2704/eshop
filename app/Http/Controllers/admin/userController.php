@@ -14,8 +14,17 @@ use App\CustomOrder;
 class userController extends Controller
 {
     public function listUser(){
-    	$user= User::orderBy('quyen','desc')->get();
-    	return view('admin.user.list',['user'=>$user]);
+        if(Auth::user()->quyen==2)
+        {
+            $user= User::orderBy('quyen','desc')->get();
+            return view('admin.user.list',['user'=>$user]);
+        }
+        else
+        {
+            $user= User::orderBy('quyen','desc')->whereNotIn('quyen',[2])->get();
+            return view('admin.user.list',['user'=>$user]);
+        }
+
     }
     public function getAdd(){
     	return view('admin.user.add');
@@ -48,6 +57,7 @@ class userController extends Controller
     		'email.max'=>'Email phải có độ dài dưới 100 kí tự',
     		'email.unique'=>'Email đã tồn tại. Vui lòng chọn Email khác'
     	]);
+
     	//tạo đối tượng thể loại
     	$user = new User();
     	//trỏ đến tên
@@ -61,7 +71,13 @@ class userController extends Controller
     	return redirect('admin/user/add')->with('thongbao','Thêm thành công');
     }
     public function getEdit($id){
-    	$user= User::find($id);
+        $user= User::find($id);
+        if(Auth::user()->quyen!=2)
+        {
+            if ($user->quyen==2) {
+                return redirect('admin/user/list')->with('error','Bạn không có quyền sửa User này');
+            }
+        }
     	return view('admin.user.edit',['user'=>$user]);
     }
     public function postEdit(Request $request, $id){
@@ -72,7 +88,7 @@ class userController extends Controller
     	[
     	//check biến có tên là name
     	//kiểm tra, yêu cầu nó phải được truyền vào và tối thiểu 2 kí tự
-    		'name'=>'required|min:3|max:100'		
+    		'name'=>'required|min:3|max:100'
     	],
     	[
     		//nếu tên k điền thì truyền 1 thông báo
@@ -81,7 +97,7 @@ class userController extends Controller
     		'name.max'=>'Tên người dùng phải có độ dài dưới 100 kí tự'
     	]);
     		//khai báo đối tượng
-    	//$user = new User(); 
+    	//$user = new User();
     	//chỉ khi thêm mới cần khai báo đối tượng mới để nó rỗng thì mới thêm được dữ liệu, còn bình thường sẽ là update
     	//trỏ đến tên
     	$user->name= $request->name;
@@ -104,7 +120,7 @@ class userController extends Controller
 	    	]);
     		$user->password= bcrypt($request->password);
     	}
-    	
+
     	//lưu vào csdl
     	$user->save();
     	// chuyển về trang them
@@ -118,7 +134,13 @@ class userController extends Controller
     	$commentProduct=CommentProduct::where('idUser',$id);
         //lấy customer có idUser= id
         $customer = Customer::where('idUser',$id)->select('id')->get();
-        echo "idUser: ".$id."<br>";
+        //kiểm tra cấp độ xóa
+        if(Auth::user()->quyen!=2)
+        {
+            if ($user->quyen==2) {
+                return redirect('admin/user/list')->with('error','Bạn không có quyền xóa User này');
+            }
+        }
         foreach ($customer as $cus){
             //lấy các customOrder có IdCustom = id trong custom
             $CustomOrder= CustomOrder::where('idCustom',$cus->id)->select('id')->get();

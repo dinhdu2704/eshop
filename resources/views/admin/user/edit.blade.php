@@ -12,7 +12,7 @@
                         </h1>
                     </div>
                     {{-- kiểm tra xem có nhận đc session thông báo lúc redirect lại không --}}
-                    
+
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
                         @if (session('thongbao'))
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label>Level</label>
                                 <select name="quyen" class="form-control" >
-                                    <option value="0" 
+                                    <option value="0"
                                         @if ($user->quyen==0)
                                             {!! "selected" !!}
                                         @endif
@@ -41,12 +41,14 @@
                                             {!! "selected" !!}
                                         @endif
                                     >Cộng tác viên</option>
+                                    @if (Auth::user()->quyen==2)
                                     <option value="2"
                                         @if ($user->quyen==2)
                                             {!! "selected" !!}
                                         @endif
                                     >Admin</option>
-                                </select> 
+                                    @endif
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Họ tên</label>
@@ -66,7 +68,7 @@
                                 <label>Nhập lại mật khẩu</label>
                                 <input class="form-control password" type="password" name="passwordAgain" placeholder="Nhập lại mật khẩu" disabled="" required/>
                             </div>
-                            
+
                             <button type="submit" class="btn btn-success">Sửa User</button>
                             <button type="reset" class="btn btn-warning">Reset</button>
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}">

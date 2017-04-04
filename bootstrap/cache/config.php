@@ -43,7 +43,6 @@
       26 => 'App\\Providers\\RouteServiceProvider',
       27 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
       28 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
-      29 => 'Weboap\\Visitor\\VisitorServiceProvider',
     ),
     'aliases' => 
     array (
@@ -174,7 +173,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\xampp\\htdocs\\Eshop\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\eshop\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -479,12 +478,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\xampp\\htdocs\\Eshop\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\eshop\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\xampp\\htdocs\\Eshop\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\eshop\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -518,7 +517,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\xampp\\htdocs\\Eshop\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\eshop\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -595,10 +594,10 @@
   'session' => 
   array (
     'driver' => 'file',
-    'lifetime' => 120,
+    'lifetime' => 60,
     'expire_on_close' => true,
     'encrypt' => false,
-    'files' => 'D:\\xampp\\htdocs\\Eshop\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\eshop\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -617,8 +616,8 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\Eshop\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\eshop\\resources\\views',
     ),
-    'compiled' => 'D:\\xampp\\htdocs\\Eshop\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\eshop\\storage\\framework\\views',
   ),
 );

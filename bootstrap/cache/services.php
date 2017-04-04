@@ -30,7 +30,6 @@
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
     28 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
-    29 => 'Weboap\\Visitor\\VisitorServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,7 +49,6 @@
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
     15 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
-    16 => 'Weboap\\Visitor\\VisitorServiceProvider',
   ),
   'deferred' => 
   array (

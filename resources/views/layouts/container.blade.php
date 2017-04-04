@@ -18,12 +18,12 @@
 					@include('layouts.left-sidebar')
 					{{-- end left sidebar --}}
 				</div>
-				
+
 				<div class="col-sm-9 col-md-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						@foreach ($product as $pro)
-						
+
 						<div class="col-sm-4 col-md-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -42,7 +42,7 @@
 												<br>
 												<a href="buy/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
-											
+
 											@if ($pro->soluong <=30)
 												<img src="images/home/sale.png" class="new" alt="" />
 											@endif
@@ -60,9 +60,9 @@
 							</div>
 						</div>
 						@endforeach
-		
+
 					</div><!--features_items-->
-					
+
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -71,9 +71,9 @@
 							@endphp
 							@foreach ($category as $cate)
 								@if(count($cate->subCategory)>0)
-								<li 
-									@if($stt2==0) 
-										class="active" 
+								<li
+									@if($stt2==0)
+										class="active"
 									@endif
 								>
 									<a href="#{{ $cate->tenkodau }}" data-toggle="tab">{{ $cate->ten }}</a>
@@ -82,9 +82,9 @@
 									@endphp
 								</li>
 								@endif
-								
+
 							@endforeach
-							
+
 							</ul>
 						</div>
 						<div class="tab-content">
@@ -93,10 +93,10 @@
 						@endphp
 						@foreach ($category as $cate)
 							@if (count($cate->subCategory) >0)
-							<div class="tab-pane fade 
-								@if($stt3==0) 
+							<div class="tab-pane fade
+								@if($stt3==0)
 									active
-								@endif 
+								@endif
 								@php
 									$stt3++;
 								@endphp
@@ -111,19 +111,19 @@
 												<p>{{ $pro->ten }}</p>
 												<a href="buy/{{ $pro->tenkodau }}-{{ $pro->id }}.html" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
-											
+
 										</div>
 									</div>
 								</div>
 								@endforeach
 							</div>
 							@endif
-						@endforeach	
+						@endforeach
 						</div>
 					</div><!--/category-tab-->
-					
+
 					@include('layouts.recommended-item')
-					
+
 				</div>
 			</div>
 		</div>

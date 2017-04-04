@@ -33,7 +33,9 @@
                                 <select class="form-control" name="quyen">
                                     <option @if(old('quyen')==0) {{ "selected" }} @endif value="0">Người dùng</option>
                                     <option @if(old('quyen')==1) {{ "selected" }} @endif  value="1">Cộng tác viên</option>
+                                @if (Auth::user()->quyen==2)
                                     <option @if(old('quyen')==2) {{ "selected" }} @endif  value="2">Quản trị viên</option>
+                                @endif
                                 </select>
                             </div>
                             <div class="form-group">
@@ -44,7 +46,7 @@
                                 <label>Email</label>
                                 <input class="form-control" type="email" name="email" placeholder="kaideptrai@gmail.com" value="{!! old('email') !!}" required/>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Password</label>
                                 <input class="form-control" type="password" name="password" placeholder="Password" required/>
@@ -53,7 +55,7 @@
                                 <label>Nhập lại Password</label>
                                 <input class="form-control" type="password" name="passwordAgain" placeholder="Password Again" required/>
                             </div>
-                            
+
                             <button type="submit" class="btn btn-success">Add User</button>
                             <button type="reset" class="btn btn-warning">Reset</button>
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
